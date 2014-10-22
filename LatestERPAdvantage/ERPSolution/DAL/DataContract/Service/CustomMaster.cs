@@ -6,6 +6,7 @@ using System.Text;
 namespace Advantage.ERP.DAL.DataContract
 {
 //Customer Mastor Modal
+    //My Comment to delete
    public class CustomMaster
     {
         public string pCustPrefix { get; set; }
