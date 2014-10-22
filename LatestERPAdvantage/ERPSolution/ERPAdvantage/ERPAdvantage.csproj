@@ -70,11 +70,14 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="CostingMain.aspx" />
+    <Content Include="FinanceMain.aspx" />
     <Content Include="Images\add_new.jpg" />
     <Content Include="Images\delete.gif" />
     <Content Include="Images\edit.gif" />
     <Content Include="Images\unassign.jpg" />
     <Content Include="Images\view.gif" />
+    <Content Include="InventryMain.aspx" />
     <Content Include="Login\LogMeIn.aspx" />
     <Content Include="Service\ServiceMaster\CustomerMaster.aspx" />
     <Content Include="Styles\generic.css" />
@@ -93,6 +96,7 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
+    <Content Include="ServiceMain.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="About.aspx.cs">
@@ -135,6 +139,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>UIMessege.resx</DependentUpon>
     </Compile>
+    <Compile Include="CostingMain.aspx.cs">
+      <DependentUpon>CostingMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CostingMain.aspx.designer.cs">
+      <DependentUpon>CostingMain.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -143,8 +154,22 @@
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Code\ERPSystemData.cs" />
+    <Compile Include="FinanceMain.aspx.cs">
+      <DependentUpon>FinanceMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FinanceMain.aspx.designer.cs">
+      <DependentUpon>FinanceMain.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="InventryMain.aspx.cs">
+      <DependentUpon>InventryMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InventryMain.aspx.designer.cs">
+      <DependentUpon>InventryMain.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login\LogMeIn.aspx.cs">
       <DependentUpon>LogMeIn.aspx</DependentUpon>
@@ -170,6 +195,13 @@
     </Compile>
     <Compile Include="App_Code\UIControl.cs" />
     <Compile Include="App_Code\UIvalidations.cs" />
+    <Compile Include="ServiceMain.aspx.cs">
+      <DependentUpon>ServiceMain.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ServiceMain.aspx.designer.cs">
+      <DependentUpon>ServiceMain.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -207,6 +239,9 @@
       <LastGenOutput>UIMessege.Designer.cs</LastGenOutput>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.sitemap" />
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
@@ -220,7 +255,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>4866</DevelopmentServerPort>
+          <DevelopmentServerPort>2522</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>
