@@ -36,3 +36,15 @@ E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Prac
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\obj\Debug\WSLibrary.csprojResolveAssemblyReference.cache
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\obj\Debug\WSLibrary.dll
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\obj\Debug\WSLibrary.pdb
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\WSLibrary.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\WSLibrary.pdb
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Advantage.ERP.BLL.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Advantage.ERP.DAL.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Advantage.ERP.BLL.pdb
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Advantage.ERP.DAL.pdb
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\obj\Debug\WSLibrary.csprojResolveAssemblyReference.cache
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\obj\Debug\WSLibrary.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\obj\Debug\WSLibrary.pdb

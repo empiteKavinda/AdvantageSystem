@@ -151,3 +151,17 @@ E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\zh-Hant\System.Sp
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\obj\Debug\ERPAdvantage.csprojResolveAssemblyReference.cache
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\obj\Debug\ERPAdvantage.dll
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\obj\Debug\ERPAdvantage.pdb
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\obj\Debug\ERPAdvantage.csprojResolveAssemblyReference.cache
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\obj\Debug\ERPAdvantage.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\ERPAdvantage.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\ERPAdvantage.pdb
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Advantage.ERP.BLL.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Advantage.ERP.DAL.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\WSLibrary.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.ServiceLocation.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Advantage.ERP.BLL.pdb
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Advantage.ERP.DAL.pdb
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\WSLibrary.pdb
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\obj\Debug\ERPAdvantage.pdb
