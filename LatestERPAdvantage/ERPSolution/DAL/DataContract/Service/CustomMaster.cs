@@ -5,6 +5,7 @@ using System.Text;
 
 namespace Advantage.ERP.DAL.DataContract
 {
+//Customer Mastor Modal
    public class CustomMaster
     {
         public string pCustPrefix { get; set; }
