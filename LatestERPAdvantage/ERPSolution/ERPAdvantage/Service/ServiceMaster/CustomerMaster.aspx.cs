@@ -42,6 +42,10 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
        
       
     }
+
+    /// <summary>
+    /// Get the Salutation 
+    /// </summary>
    private void getPrefix()
     {
        UIControl uicon = new UIControl();
