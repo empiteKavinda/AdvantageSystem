@@ -15,7 +15,7 @@ namespace Advantage.ERP.BLL
 {
    public class ServiceBusinessCalls
     {
-
+       //commented by sumith
  #region frmCustomerMaster definitions
        public List<gDropdownlist> pMsGetCategory(DAL.DataContract.CustomMaster objMst)
         {
