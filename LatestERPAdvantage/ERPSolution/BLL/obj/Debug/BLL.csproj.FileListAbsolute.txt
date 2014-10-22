@@ -1,0 +1,17 @@
+E:\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Advantage.ERP.BLL.dll
+E:\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Advantage.ERP.BLL.pdb
+E:\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Advantage.ERP.DAL.dll
+E:\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+E:\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.Unity.dll
+E:\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+E:\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Advantage.ERP.DAL.pdb
+E:\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
+E:\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
+E:\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+E:\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.Unity.xml
+E:\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.Unity.Interception.xml
+E:\LatestERPAdvantage\ERPSolution\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\LatestERPAdvantage\ERPSolution\BLL\obj\Debug\Advantage.ERP.BLL.dll
+E:\LatestERPAdvantage\ERPSolution\BLL\obj\Debug\Advantage.ERP.BLL.pdb
