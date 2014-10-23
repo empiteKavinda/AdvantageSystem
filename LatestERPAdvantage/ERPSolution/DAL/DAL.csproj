@@ -61,6 +61,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataContract\Service\CustomMaster.cs" />
+    <Compile Include="DataContract\TSEC_USR_OBJData.cs" />
     <Compile Include="DataContract\UserSpecificData.cs" />
     <Compile Include="Service\ServiceDatabaseCalls.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

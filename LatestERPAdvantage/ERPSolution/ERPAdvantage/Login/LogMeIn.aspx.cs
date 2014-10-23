@@ -62,6 +62,8 @@ namespace ERPAdvantage.Login
             // Write the user permission to access at least one module list back to session state.
             Session["UserPerModules"] = list;
             Session["UserobjuMst"] = objuMst;
+             
+
             if (list.Count>=0)
             {
             if (success == true)

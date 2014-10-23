@@ -17,6 +17,8 @@ namespace Advantage.ERP.DAL.DataContract
         public string pEdit { get; set; }
         public string pDelete { get; set; }
         public string pPwd { get; set; }
+
+       
             
     }
 }

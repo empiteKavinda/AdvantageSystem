@@ -26,8 +26,8 @@ namespace Advantage.ERP.BLL
      }
       public string SUSR_USR_ID
       {
-          get { return SUSR_USR_ID; }
-          set { SUSR_USR_ID = value; }
+          get { return _SUSR_USR_ID; }
+          set { _SUSR_USR_ID = value; }
       }
 
       public int SUSR_MOD_ID

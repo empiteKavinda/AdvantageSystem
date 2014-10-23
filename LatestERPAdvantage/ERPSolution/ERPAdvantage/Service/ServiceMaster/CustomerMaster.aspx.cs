@@ -93,6 +93,7 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
        ADTWebService wsoj = new ADTWebService();
        CustomMaster objMst = new CustomMaster();
        UserSpecificData objumst = new UserSpecificData();
+       TSEC_USR_OBJData objTs = new TSEC_USR_OBJData(); 
        UIvalidations uiv = new UIvalidations();
 
        if (uiv.Isnotname(txtFname.Text.Trim()))
@@ -107,18 +108,31 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
          objMst.pCustName = txtFname.Text.Trim();
        }
         
-         objumst.pUserId = "admin";
-         objumst.pBrnCode = "hdo";
-         objumst.pModType = "Service";
-         objumst.pObjId = "4";
-
+         //objumst.pUserId = "admin";
+         //objumst.pBrnCode = "hdo";
+         //objumst.pModType = "Service";
+         //objumst.pObjId = "4";
+        
+        
 
          // When retrieving an object from session state, cast it to 
          // the appropriate type.
-         List<TSEC_USR_OBJ> userMlist = (List<TSEC_USR_OBJ>)Session["UserPerModules"];
+       //  List<TSEC_USR_OBJ> userMlist = (List<TSEC_USR_OBJ>)Session["UserPerModules"];
+
+       UserSpecificData useObj = (UserSpecificData)Session["UserobjuMst"];
+       TSEC_USR_OBJData useTsecoj = (TSEC_USR_OBJData)Session["UserPerModules"]; 
+       
+         objumst.pUserId = useObj.pUserId ;
+         objumst.pBrnCode = useObj.pBrnCode;
+         objumst.pModType = useObj.pModType;
+         objumst.pObjId = useObj.pObjId;
+       
+         objTs.pSUSR_MOD_ID = useTsecoj.pSUSR_MOD_ID;
+         objTs.pSUSR_OBJ_ID = useTsecoj.pSUSR_OBJ_ID;
+         objTs.pSUSR_ORG_CD = useTsecoj.pSUSR_ORG_CD;
+         objTs.pSUSR_USR_ID = useTsecoj.pSUSR_USR_ID; 
+
         
-
-
          success = wsoj.gMsGetUserPermissioncheck(objumst);
          if (success == true && objumst.pNew == "Y")
          {

@@ -25,7 +25,6 @@ E:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.Unity.xml
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.Unity.Interception.xml
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\obj\Debug\Advantage.ERP.DAL.dll
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\obj\Debug\Advantage.ERP.DAL.pdb
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Advantage.ERP.DAL.dll
