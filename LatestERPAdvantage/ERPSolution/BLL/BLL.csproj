@@ -52,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="gDropdownlist.cs" />
+    <Compile Include="Service\IServiceBusinessCalls.cs" />
     <Compile Include="Service\ServiceBusinessCalls.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TSEC_USR_OBJ.cs" />

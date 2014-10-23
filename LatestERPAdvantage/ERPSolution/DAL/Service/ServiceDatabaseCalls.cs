@@ -13,8 +13,8 @@ using Microsoft.Practices.EnterpriseLibrary.Common;
 
 namespace Advantage.ERP.DAL
 {
-   public class ServiceDatabaseCalls
-    {
+   public class ServiceDatabaseCalls : IServiceDatabaseCalls
+   {
 
 #region frmCustomerMaster definitions
        public SqlDataReader pMsGetCategory(DAL.DataContract.CustomMaster objMst)
