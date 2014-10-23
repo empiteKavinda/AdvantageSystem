@@ -62,6 +62,7 @@
   <ItemGroup>
     <Compile Include="DataContract\Service\CustomMaster.cs" />
     <Compile Include="DataContract\UserSpecificData.cs" />
+    <Compile Include="Service\IServiceDatabaseCalls.cs" />
     <Compile Include="Service\ServiceDatabaseCalls.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

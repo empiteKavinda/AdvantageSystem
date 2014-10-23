@@ -13,8 +13,8 @@ using System.Configuration;
 
 namespace Advantage.ERP.BLL
 {
-   public class ServiceBusinessCalls
-    {
+   public class ServiceBusinessCalls : IServiceBusinessCalls
+   {
        //commented by sumith
  #region frmCustomerMaster definitions
        public List<gDropdownlist> pMsGetCategory(DAL.DataContract.CustomMaster objMst)
