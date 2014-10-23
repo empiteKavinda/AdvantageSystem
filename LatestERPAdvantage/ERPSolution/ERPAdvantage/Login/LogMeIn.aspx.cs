@@ -66,7 +66,7 @@ namespace ERPAdvantage.Login
             {
             if (success == true)
             {
-               Response.Redirect("~/MST/CustomerMaster.aspx");
+               Response.Redirect("~/Default.aspx");
             }
             }
 
