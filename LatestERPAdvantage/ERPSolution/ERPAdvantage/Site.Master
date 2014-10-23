@@ -34,9 +34,10 @@
                 <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
                     <Items>
                         <asp:MenuItem NavigateUrl="~/ServiceMain.aspx" Text="Service" target="_blank"/>
-                        <asp:MenuItem NavigateUrl="~/InventryMain.aspx" Text="Inventry" target="_blank"/>
-                        <asp:MenuItem NavigateUrl="~/FinanceMain.aspx" Text="Finance" target="_blank"/>
+                        <asp:MenuItem NavigateUrl="~/InventryMain.aspx" Text="Inventory" target="_blank"/>
                         <asp:MenuItem NavigateUrl="~/CostingMain.aspx" Text="Costing" target="_blank"/>
+                        <asp:MenuItem NavigateUrl="~/FinanceMain.aspx" Text="Finance" target="_blank"/>
+                        
                     </Items>
                 </asp:Menu>
             </div>
