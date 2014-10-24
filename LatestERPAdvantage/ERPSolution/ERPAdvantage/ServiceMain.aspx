@@ -9,9 +9,9 @@
         <RootNodeStyle Font-Bold="True" ForeColor="#FF8000" />
     </asp:SiteMapPath>
     <br />
-    <asp:Menu ID="Menu1" runat="server" BackColor="#B5C7DE" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.8em" ForeColor="#284E98" StaticSubMenuIndent="10px">
+    <asp:Menu ID="Menu1" runat="server" BackColor="#B5C7DE" DynamicHorizontalOffset="2" Font-Names="Verdana" Font-Size="0.9em" ForeColor="#284E98" StaticSubMenuIndent="10px">
         <DynamicHoverStyle BackColor="#284E98" ForeColor="White" />
-        <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+        <DynamicMenuItemStyle HorizontalPadding="6px" VerticalPadding="3px" />
         <DynamicMenuStyle BackColor="#B5C7DE" />
         <DynamicSelectedStyle BackColor="#507CD1" />
         <Items>
