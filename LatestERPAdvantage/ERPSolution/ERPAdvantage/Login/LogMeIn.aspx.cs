@@ -36,7 +36,8 @@ namespace ERPAdvantage.Login
             DropDownList ddlBranch = ((DropDownList)this.LoginUser.FindControl("ddlBranch"));
              objuMst.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
              List<gDropdownlist> drplist = wsoj.gMsGetBranchData(objuMst);
-            uicon.FillDropdownList(ddlBranch, drplist, "COM_ORG_CD", "COM_ORG_NAME");
+             uicon.FillDropdownList(ddlBranch, drplist, "COM_ORG_CD", "COM_ORG_CD");
+            
         }
 
         protected void ddlBranch_SelectedIndexChanged(object sender, EventArgs e)
@@ -44,7 +45,10 @@ namespace ERPAdvantage.Login
             DropDownList ddlBranch = ((DropDownList)this.LoginUser.FindControl("ddlBranch"));
            // objuMst.pBrnCode = 
             TextBox txtBranchName = ((TextBox)this.LoginUser.FindControl("txtBranchName"));
-            txtBranchName.Text = ddlBranch.SelectedItem.Text;
+           // txtBranchName.Text = 
+            //  txtBranchName.Text = objuMst.pBrnCode;
+            objuMst.pBrnCode = ddlBranch.SelectedValue;
+            
         }
 
         private void Cmd_Login_Click()
@@ -56,7 +60,7 @@ namespace ERPAdvantage.Login
             objuMst.pPwd = ((TextBox)this.LoginUser.FindControl("Password")).Text;
             objuMst.pUserId = ((TextBox)this.LoginUser.FindControl("UserName")).Text;
             objuMst.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
-            
+                       
             success = wsoj.gMsCheckPassword(objuMst);
             List<TSEC_USR_OBJ> list = wsoj.gMsCheckSpecifiedModulepermission(objuMst);
             // Write the user permission to access at least one module list back to session state.

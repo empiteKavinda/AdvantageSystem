@@ -10,6 +10,7 @@ namespace Advantage.ERP.BLL
         //string datavalueField, string dataTextField
       private string _datavalueField;
       private string _dataTextField;
+     
       public gDropdownlist(string DatavalueField, string DataTextField)
       {
           this._datavalueField = DatavalueField;
@@ -36,9 +37,9 @@ namespace Advantage.ERP.BLL
       public string COM_ORG_CD
       {
 
-          get { return _dataTextField; }
+          get { return _datavalueField; }
 
-          set { _dataTextField = value; }
+          set { _datavalueField = value; }
 
       }
 

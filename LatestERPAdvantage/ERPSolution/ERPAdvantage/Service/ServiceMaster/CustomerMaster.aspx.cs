@@ -112,33 +112,34 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
          //objumst.pBrnCode = "hdo";
          //objumst.pModType = "Service";
          //objumst.pObjId = "4";
-        
-        
+           
 
          // When retrieving an object from session state, cast it to 
          // the appropriate type.
-       //  List<TSEC_USR_OBJ> userMlist = (List<TSEC_USR_OBJ>)Session["UserPerModules"];
-
-       UserSpecificData useObj = (UserSpecificData)Session["UserobjuMst"];
-       TSEC_USR_OBJData useTsecoj = (TSEC_USR_OBJData)Session["UserPerModules"]; 
        
-         objumst.pUserId = useObj.pUserId ;
+        UserSpecificData useObj = (UserSpecificData)Session["UserobjuMst"];
+       List<TSEC_USR_OBJ> userMlist = (List<TSEC_USR_OBJ>)Session["UserPerModules"];
+      // list = (List<TSEC_USR_OBJ>)Session["UserPerModules"];
+         for (int i = 0; i < userMlist.Count;i++ )
+         {
+             objTs.pSUSR_MOD_ID = userMlist[i].SUSR_MOD_ID;
+             objTs.pSUSR_OBJ_ID = userMlist[i].SUSR_OBJ_ID ;
+             objTs.pSUSR_ORG_CD = userMlist[i].SUSR_ORG_CD;
+             objTs.pSUSR_USR_ID = userMlist[i].SUSR_USR_ID; 
+         }
+
+         objumst.pUserId = useObj.pUserId;
          objumst.pBrnCode = useObj.pBrnCode;
-         objumst.pModType = useObj.pModType;
-         objumst.pObjId = useObj.pObjId;
+         //objumst.pModType = useObj.pModType;
+         //objumst.pObjId = useObj.pObjId;
        
-         objTs.pSUSR_MOD_ID = useTsecoj.pSUSR_MOD_ID;
-         objTs.pSUSR_OBJ_ID = useTsecoj.pSUSR_OBJ_ID;
-         objTs.pSUSR_ORG_CD = useTsecoj.pSUSR_ORG_CD;
-         objTs.pSUSR_USR_ID = useTsecoj.pSUSR_USR_ID; 
-
-        
+      
          success = wsoj.gMsGetUserPermissioncheck(objumst);
          if (success == true && objumst.pNew == "Y")
          {
              try
              {
-                 objMst.pUserId = "admin";
+                // objMst.pUserId = "admin";
                  objMst.pCustPrefix = ddlPrefix.SelectedItem.Text;
                  objMst.pCustAdd = txtInAddress.Text;
                  objMst.pCustServiceAddress = txtSerAddress.Text;

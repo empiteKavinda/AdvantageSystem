@@ -229,11 +229,11 @@ namespace Advantage.ERP.BLL
        {
         Advantage.ERP.DAL.ServiceDatabaseCalls obj = new Advantage.ERP.DAL.ServiceDatabaseCalls();
         List<gDropdownlist> drpdwlst = new List<gDropdownlist>();
-
         SqlDataReader dr = obj.gMsGetBranchData(objuMst);
         while (dr.Read())
         {
             gDropdownlist drl = new gDropdownlist(dr.GetString(0), dr.GetString(1));
+            
             drpdwlst.Add(drl);
         }
         return drpdwlst ;
