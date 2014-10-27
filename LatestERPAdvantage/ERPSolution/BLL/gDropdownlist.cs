@@ -5,56 +5,57 @@ using System.Text;
 
 namespace Advantage.ERP.BLL
 {
-  public class gDropdownlist
+    public class gDropdownlist
     {
         //string datavalueField, string dataTextField
-      private string _datavalueField;
-      private string _dataTextField;
-      public gDropdownlist(string DatavalueField, string DataTextField)
-      {
-          this._datavalueField = DatavalueField;
-          this._dataTextField = DataTextField;
-      }
+        private string _datavalueField;
+        private string _dataTextField;
 
-      public string COM_DOM_CODE
-      {
+        public gDropdownlist(string DatavalueField, string DataTextField)
+        {
+            this._datavalueField = DatavalueField;
+            this._dataTextField = DataTextField;
+        }
 
-          get { return _datavalueField; }
+        public string COM_DOM_CODE
+        {
 
-          set { _datavalueField = value; }
+            get { return _datavalueField; }
 
-      }
+            set { _datavalueField = value; }
 
-      public string COM_DOM_DESC
-      {
+        }
 
-          get { return _dataTextField; }
+        public string COM_DOM_DESC
+        {
 
-          set { _dataTextField = value; }
+            get { return _dataTextField; }
 
-      }
-      public string COM_ORG_CD
-      {
+            set { _dataTextField = value; }
 
-          get { return _dataTextField; }
+        }
+        public string COM_ORG_CD
+        {
 
-          set { _dataTextField = value; }
+            get { return _datavalueField; }
 
-      }
+            set { _datavalueField = value; }
 
-      public string COM_ORG_NAME
-      {
+        }
 
-          get { return _dataTextField; }
+        public string COM_ORG_NAME
+        {
 
-          set { _dataTextField = value; }
+            get { return _dataTextField; }
 
-      }
+            set { _dataTextField = value; }
+
+        }
 
 
-      //public string COM_DOM_CODE { get; set; }
-     // public string COM_DOM_DESC { get; set; }
-   
-  
-  }
+        //public string COM_DOM_CODE { get; set; }
+        // public string COM_DOM_DESC { get; set; }
+
+
+    }
 }

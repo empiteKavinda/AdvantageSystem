@@ -17,18 +17,21 @@ using Advantage.ERP.BLL;
 
 public partial class MST_CustomerMaster : System.Web.UI.Page
 {
-    string cFlagSE;
+   UserSpecificData objumst = new UserSpecificData();
+   TSEC_USR_OBJData objTs = new TSEC_USR_OBJData(); 
+   ADTWebService wsoj = new ADTWebService();
+   CustomMaster objMst = new CustomMaster();
+    
+   string cFlagSE;
     protected void Page_Load(object sender, EventArgs e)
     {
-        ADTWebService wsoj = new ADTWebService();
-        CustomMaster objMst = new CustomMaster();
         objMst.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
         objMst.pCustCode = "";
         cFlagSE = Convert.ToString(Session["cFlagSE"]);
-
         if (!IsPostBack)
         {
-            UIvalidations uiv = new UIvalidations();
+                               
+           UIvalidations uiv = new UIvalidations();
             uiv.ClearInputs(Page.Controls);
             getPrefix();
             getArea();
@@ -83,17 +86,25 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
   protected void btnSave_Click(object sender, EventArgs e)
      {
        //  Page.Validate();
-        gMsCreateCustDetails();
+         UIvalidations uiv = new UIvalidations();
+         UserSpecificData objumst = new UserSpecificData();
+         if (uiv.CheckModuleAccess(objumst))
+         {
+             gMsCreateCustDetails(objumst);
+         }
+         else
+         {
+             lblStates.Text = Resources.UIMessege.msgAdeni;
+             lblStates.ForeColor = Color.Red;
+         }
         
      }
 
-    private  void gMsCreateCustDetails()
+  private void gMsCreateCustDetails(Advantage.ERP.DAL.DataContract.UserSpecificData objuMod)
     {
        bool success=false;
        ADTWebService wsoj = new ADTWebService();
        CustomMaster objMst = new CustomMaster();
-       UserSpecificData objumst = new UserSpecificData();
-       TSEC_USR_OBJData objTs = new TSEC_USR_OBJData(); 
        UIvalidations uiv = new UIvalidations();
 
        if (uiv.Isnotname(txtFname.Text.Trim()))
@@ -107,38 +118,18 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
        {
          objMst.pCustName = txtFname.Text.Trim();
        }
-        
-         //objumst.pUserId = "admin";
-         //objumst.pBrnCode = "hdo";
-         //objumst.pModType = "Service";
-         //objumst.pObjId = "4";
-        
-        
 
-         // When retrieving an object from session state, cast it to 
-         // the appropriate type.
-       //  List<TSEC_USR_OBJ> userMlist = (List<TSEC_USR_OBJ>)Session["UserPerModules"];
-
-       UserSpecificData useObj = (UserSpecificData)Session["UserobjuMst"];
-       TSEC_USR_OBJData useTsecoj = (TSEC_USR_OBJData)Session["UserPerModules"]; 
+        objumst.pUserId = objuMod.pUserId;
+         objumst.pBrnCode = objuMod.pBrnCode;
+         objumst.pModType = objuMod.pModType;
+         objumst.pObjId = objuMod.pObjId;
        
-         objumst.pUserId = useObj.pUserId ;
-         objumst.pBrnCode = useObj.pBrnCode;
-         objumst.pModType = useObj.pModType;
-         objumst.pObjId = useObj.pObjId;
-       
-         objTs.pSUSR_MOD_ID = useTsecoj.pSUSR_MOD_ID;
-         objTs.pSUSR_OBJ_ID = useTsecoj.pSUSR_OBJ_ID;
-         objTs.pSUSR_ORG_CD = useTsecoj.pSUSR_ORG_CD;
-         objTs.pSUSR_USR_ID = useTsecoj.pSUSR_USR_ID; 
-
-        
-         success = wsoj.gMsGetUserPermissioncheck(objumst);
-         if (success == true && objumst.pNew == "Y")
+         success = wsoj.gMsGetUserPermissioncheck(objuMod);
+         if (success == true && objuMod.pNew == "Y")
          {
              try
              {
-                 objMst.pUserId = "admin";
+                // objMst.pUserId = "admin";
                  objMst.pCustPrefix = ddlPrefix.SelectedItem.Text;
                  objMst.pCustAdd = txtInAddress.Text;
                  objMst.pCustServiceAddress = txtSerAddress.Text;
@@ -272,91 +263,96 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
     protected void gvCustomerDetails_SelectedIndexChanged(object sender, EventArgs e)
     {
         bool success = false;
-        ADTWebService wsoj = new ADTWebService();
-        CustomMaster objMst = new CustomMaster();
+        //ADTWebService wsoj = new ADTWebService();
+        //CustomMaster objMst = new CustomMaster();
         UserSpecificData objumst = new UserSpecificData();
+        UserSpecificData objuMod = new UserSpecificData();
         UIvalidations uiv = new UIvalidations();
-
-        objumst.pUserId = "admin";
-        objumst.pBrnCode = "hdo";
-        objumst.pModType = "Service";
-        objumst.pObjId = "4";
-        success = wsoj.gMsGetUserPermissioncheck(objumst);
-        if (success == true && objumst.pEdit == "Y" && objumst.pView == "Y")
-        {
-            try
-            {
-                objMst.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
-                objMst.pCustCode = this.gvCustomerDetails.SelectedDataKey.Values[0].ToString();
-                wsoj.gMsGetCustomerList(objMst);
-            
-                if (!string.IsNullOrEmpty(objMst.pCustPrefix))
-                {
-                   //objMst.pCustPrefix = objMst.pCustPrefix.Substring(0, 1).ToUpper() + objMst.pCustPrefix.Substring(1).ToLower();
-                   ddlPrefix.SelectedValue = objMst.pCustPrefix;
                 
-                }
-                else
-                {
-                    ddlPrefix.SelectedIndex = -1;
-                }
-                txtFname.Text = objMst.pCustName.ToString();
-                txtInAddress.Text = objMst.pCustAdd.ToString();
-                txtSerAddress.Text = objMst.pCustServiceAddress;
-                if (!string.IsNullOrEmpty(objMst.pCustArea))
-                {
-                    ddlAreaName.SelectedValue = objMst.pCustArea;
-                }
-                else
-                {
-                    ddlAreaName.SelectedIndex = -1;
-                }
-                if (!string.IsNullOrEmpty(objMst.pCustCategory))
-                {
-                    ddlCatogory.SelectedValue= objMst.pCustCategory;
-                }
-                else
-                {
-                    ddlCatogory.SelectedIndex = -1;
-                }
-                   
-                ddlSplcust.Text = objMst.pSpeCust;
-                txtCreLimit.Text = objMst.pCustCreditLimit.ToString();
-                txtCreGiven.Text = objMst.pCustCreditGiven.ToString();
-
-               if (objMst.pVATApplicable == "Y")
-                {
-                    cheVatnumber.Checked = true;
-                }
-                else
-                {
-                    cheVatnumber.Checked = false;
-                }
-                txtVatNo.Text = objMst.pCustVATNo;
-                txtSvatNo.Text = objMst.pSVAT;
-                ddlSvatcatogary.SelectedIndex = 1;
-                txttelNo1.Text = objMst.pCustPhone1;
-                txtTelno2.Text = objMst.pCustPhone2;
-                txtFaxno.Text = objMst.pCustFax;
-                txtMobNo.Text = objMst.pCustCellNo;
-                txtEmailAddress.Text = objMst.pCustEmail;
-                txtContPerSer.Text = objMst.pCustContactPerson_Technical;
-                txtTelnoSer.Text = objMst.pCustContactPerson_PhoneNo3;
-                txtConPerinv.Text = objMst.pCustContactPerson_Invoice;
-                txtTelnoInv.Text = objMst.pCustContactPerson_PhoneNo4;
-
-                btnSave.Text = ERPSystemData.Status.Update.ToString();
-                
-            }
-            catch (Exception )
-            {
-                //lblError.Text = Resources.UIMessege.msgSaveError;
-            }
-
-        }
-        else if (success == true && objumst.pView == "Y")
+        if (uiv.CheckModuleAccess(objuMod))
         {
-            uiv.DisableControls(Page, false);
+            objumst.pUserId = objuMod.pUserId;
+            objumst.pBrnCode = objuMod.pBrnCode;
+            objumst.pModType = objuMod.pModType;
+            objumst.pObjId = objuMod.pObjId;
+
+            success = wsoj.gMsGetUserPermissioncheck(objumst);
+            if (success == true && objumst.pEdit == "Y" && objumst.pView == "Y")
+            {
+                try
+                {
+                    objMst.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
+                    objMst.pCustCode = this.gvCustomerDetails.SelectedDataKey.Values[0].ToString();
+                    wsoj.gMsGetCustomerList(objMst);
+
+                    if (!string.IsNullOrEmpty(objMst.pCustPrefix))
+                    {
+                        //objMst.pCustPrefix = objMst.pCustPrefix.Substring(0, 1).ToUpper() + objMst.pCustPrefix.Substring(1).ToLower();
+                        ddlPrefix.SelectedValue = objMst.pCustPrefix;
+
+                    }
+                    else
+                    {
+                        ddlPrefix.SelectedIndex = -1;
+                    }
+                    txtFname.Text = objMst.pCustName.ToString();
+                    txtInAddress.Text = objMst.pCustAdd.ToString();
+                    txtSerAddress.Text = objMst.pCustServiceAddress;
+                    if (!string.IsNullOrEmpty(objMst.pCustArea))
+                    {
+                        ddlAreaName.SelectedValue = objMst.pCustArea;
+                    }
+                    else
+                    {
+                        ddlAreaName.SelectedIndex = -1;
+                    }
+                    if (!string.IsNullOrEmpty(objMst.pCustCategory))
+                    {
+                        ddlCatogory.SelectedValue = objMst.pCustCategory;
+                    }
+                    else
+                    {
+                        ddlCatogory.SelectedIndex = -1;
+                    }
+
+                    ddlSplcust.Text = objMst.pSpeCust;
+                    txtCreLimit.Text = objMst.pCustCreditLimit.ToString();
+                    txtCreGiven.Text = objMst.pCustCreditGiven.ToString();
+
+                    if (objMst.pVATApplicable == "Y")
+                    {
+                        cheVatnumber.Checked = true;
+                    }
+                    else
+                    {
+                        cheVatnumber.Checked = false;
+                    }
+                    txtVatNo.Text = objMst.pCustVATNo;
+                    txtSvatNo.Text = objMst.pSVAT;
+                    ddlSvatcatogary.SelectedIndex = 1;
+                    txttelNo1.Text = objMst.pCustPhone1;
+                    txtTelno2.Text = objMst.pCustPhone2;
+                    txtFaxno.Text = objMst.pCustFax;
+                    txtMobNo.Text = objMst.pCustCellNo;
+                    txtEmailAddress.Text = objMst.pCustEmail;
+                    txtContPerSer.Text = objMst.pCustContactPerson_Technical;
+                    txtTelnoSer.Text = objMst.pCustContactPerson_PhoneNo3;
+                    txtConPerinv.Text = objMst.pCustContactPerson_Invoice;
+                    txtTelnoInv.Text = objMst.pCustContactPerson_PhoneNo4;
+
+                    btnSave.Text = ERPSystemData.Status.Update.ToString();
+
+                }
+                catch (Exception)
+                {
+                    //lblError.Text = Resources.UIMessege.msgSaveError;
+                }
+
+            }
+            else if (success == true && objumst.pView == "Y")
+            {
+                uiv.DisableControls(Page, false);
+            }
         }
         else
         {

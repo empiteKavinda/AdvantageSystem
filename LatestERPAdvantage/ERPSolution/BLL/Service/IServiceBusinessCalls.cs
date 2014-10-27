@@ -15,5 +15,6 @@ namespace Advantage.ERP.BLL
         bool gMsCheckPassword(DAL.DataContract.UserSpecificData objuMst);
         List<TSEC_USR_OBJ> gMsCheckSpecifiedModulepermission(DAL.DataContract.UserSpecificData objuMst);
         List<gDropdownlist> gMsGetBranchData(DAL.DataContract.UserSpecificData objuMst);
+      //  List<gDropdownlist> PMsGetCustomerServiceCenter(string orgCode);
     }
 }

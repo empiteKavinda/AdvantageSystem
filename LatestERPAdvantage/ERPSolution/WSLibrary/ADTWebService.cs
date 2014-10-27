@@ -15,8 +15,20 @@ using System.Web.UI.WebControls;
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
 public class ADTWebService : WebServiceBase
 {
-#region CustomerMaster.aspx definitions
-[WebMethod()]
+
+    #region AreaMaster.aspx definitions
+
+    //[WebMethod]
+    //public List<gDropdownlist> PMsGetCustomerServiceCenter(string orgCode)
+    //{
+    //    IServiceBusinessCalls bsOj = new ServiceBusinessCalls();
+    //    return bsOj.PMsGetCustomerServiceCenter(orgCode);
+    //}
+
+    #endregion
+
+    #region CustomerMaster.aspx definitions
+    [WebMethod()]
 public string HelloWorld()
 {
     return "Hello World";
