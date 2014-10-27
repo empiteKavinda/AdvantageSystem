@@ -27,11 +27,6 @@ D:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\obj\Debug\Advantage.ERP.DAL.dl
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\obj\Debug\Advantage.ERP.DAL.pdb
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.Unity.dll
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.Unity.Interception.dll
-D:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
-D:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
-D:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.ServiceLocation.xml
-D:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.Unity.xml
-D:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.Unity.Interception.xml
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Advantage.ERP.DAL.dll
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Advantage.ERP.DAL.pdb
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
@@ -45,3 +40,6 @@ G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\DAL\obj\Deb
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\DAL\obj\Debug\Advantage.ERP.DAL.pdb
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.Unity.dll
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.Unity.Interception.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.dll
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\bin\Debug\Microsoft.Practices.ServiceLocation.dll
