@@ -15,7 +15,7 @@ namespace Advantage.ERP.BLL
 {
    public class ServiceBusinessCalls : IServiceBusinessCalls
    {
-       //commented by sumith
+       
  #region frmCustomerMaster definitions
        public List<gDropdownlist> pMsGetCategory(DAL.DataContract.CustomMaster objMst)
         {
@@ -23,14 +23,13 @@ namespace Advantage.ERP.BLL
             //DataContract.MST.CustomMaster objMst = new DataContract.MST.CustomMaster();
             // return obj.pMsGetCategory(objMst);
             List<gDropdownlist> drpdwlst = new  List<gDropdownlist>();
-
             SqlDataReader dr = obj.pMsGetCategory(objMst);
             while (dr.Read())
             {
                 gDropdownlist drl = new gDropdownlist(dr.GetString(0), dr.GetString(1));
                 drpdwlst.Add(drl);
             }
-            return drpdwlst;
+            return drpdwlst; 
         }
 
        public string GenerateCustomerCode(DAL.DataContract.CustomMaster objMst)
@@ -233,7 +232,6 @@ namespace Advantage.ERP.BLL
         while (dr.Read())
         {
             gDropdownlist drl = new gDropdownlist(dr.GetString(0), dr.GetString(1));
-            
             drpdwlst.Add(drl);
         }
         return drpdwlst ;

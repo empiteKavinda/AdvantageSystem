@@ -17,9 +17,12 @@ using Advantage.ERP.BLL;
 
 public partial class MST_CustomerMaster : System.Web.UI.Page
 {
+   
     string cFlagSE;
     protected void Page_Load(object sender, EventArgs e)
     {
+      
+        
         ADTWebService wsoj = new ADTWebService();
         CustomMaster objMst = new CustomMaster();
         objMst.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
@@ -112,13 +115,12 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
          //objumst.pBrnCode = "hdo";
          //objumst.pModType = "Service";
          //objumst.pObjId = "4";
-           
+       // When retrieving an object from session state, cast it to 
+       // the appropriate type.
 
-         // When retrieving an object from session state, cast it to 
-         // the appropriate type.
-       
-        UserSpecificData useObj = (UserSpecificData)Session["UserobjuMst"];
        List<TSEC_USR_OBJ> userMlist = (List<TSEC_USR_OBJ>)Session["UserPerModules"];
+       UserSpecificData useObj = (UserSpecificData)Session["UserobjuMst"];
+              
       // list = (List<TSEC_USR_OBJ>)Session["UserPerModules"];
          for (int i = 0; i < userMlist.Count;i++ )
          {
@@ -126,6 +128,7 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
              objTs.pSUSR_OBJ_ID = userMlist[i].SUSR_OBJ_ID ;
              objTs.pSUSR_ORG_CD = userMlist[i].SUSR_ORG_CD;
              objTs.pSUSR_USR_ID = userMlist[i].SUSR_USR_ID; 
+
          }
 
          objumst.pUserId = useObj.pUserId;
@@ -278,8 +281,13 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
         UserSpecificData objumst = new UserSpecificData();
         UIvalidations uiv = new UIvalidations();
 
-        objumst.pUserId = "admin";
-        objumst.pBrnCode = "hdo";
+        // When retrieving an object from session state, cast it to 
+        // the appropriate type.
+        List<TSEC_USR_OBJ> userMlist = (List<TSEC_USR_OBJ>)Session["UserPerModules"];
+        UserSpecificData useObj = (UserSpecificData)Session["UserobjuMst"];
+
+        objumst.pUserId = useObj.pUserId;
+        objumst.pBrnCode = useObj.pBrnCode;
         objumst.pModType = "Service";
         objumst.pObjId = "4";
         success = wsoj.gMsGetUserPermissioncheck(objumst);

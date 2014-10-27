@@ -36,18 +36,16 @@ namespace ERPAdvantage.Login
             DropDownList ddlBranch = ((DropDownList)this.LoginUser.FindControl("ddlBranch"));
              objuMst.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
              List<gDropdownlist> drplist = wsoj.gMsGetBranchData(objuMst);
-             uicon.FillDropdownList(ddlBranch, drplist, "COM_ORG_CD", "COM_ORG_CD");
+             uicon.FillDropdownList(ddlBranch, drplist, "COM_ORG_NAME", "COM_ORG_CD");
             
         }
 
         protected void ddlBranch_SelectedIndexChanged(object sender, EventArgs e)
         {
             DropDownList ddlBranch = ((DropDownList)this.LoginUser.FindControl("ddlBranch"));
-           // objuMst.pBrnCode = 
             TextBox txtBranchName = ((TextBox)this.LoginUser.FindControl("txtBranchName"));
-           // txtBranchName.Text = 
-            //  txtBranchName.Text = objuMst.pBrnCode;
-            objuMst.pBrnCode = ddlBranch.SelectedValue;
+            txtBranchName.Text = ddlBranch.SelectedValue; 
+            objuMst.pBrnCode = ddlBranch.SelectedItem.Text;
             
         }
 
@@ -67,7 +65,6 @@ namespace ERPAdvantage.Login
             Session["UserPerModules"] = list;
             Session["UserobjuMst"] = objuMst;
              
-
             if (list.Count>=0)
             {
             if (success == true)
