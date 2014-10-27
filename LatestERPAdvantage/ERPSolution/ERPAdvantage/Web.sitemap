@@ -4,6 +4,7 @@
     <siteMapNode url="~/ServiceMain.aspx" title="Service"  description="Service Module">
       <siteMapNode url="~/Service/ServiceMaster/CustomerMaster.aspx" title="Custom Master" description="This is Customer Master" />
       <siteMapNode url="~/Service/ServiceMaster/ApplianceMaster.aspx" title="Appliance Master" description="This is Appliance Master" />
+      <siteMapNode url="~/Service/ServiceMaster/AreaMaster.aspx" title="Area Master" description="This is Area Master" />
     </siteMapNode>
     <siteMapNode url="~/InventryMain.aspx" title="Inventry"  description="Inventry Module" />
     <siteMapNode url="~/FinanceMain.aspx" title="Finance" description="Finance Module"/>
