@@ -104,5 +104,18 @@ public List<TSEC_USR_OBJ> gMsCheckSpecifiedModulepermission(Advantage.ERP.DAL.Da
 
 #endregion
 
+    #region Branchdata
+//[WebMethod]
+//public string GetBranchName(Advantage.ERP.DAL.DataContract.UserSpecificData objMst)
+//{
+//    Advantage.ERP.BLL.ServiceBusinessCalls obj = new Advantage.ERP.BLL.ServiceBusinessCalls();
+//    return obj.GetBranchName(objMst);
+    
+//}
+
+
+
+    #endregion
+
 }
 

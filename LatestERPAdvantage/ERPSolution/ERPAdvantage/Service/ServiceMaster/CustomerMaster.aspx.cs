@@ -255,7 +255,7 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
                  }
              
              }
-             catch (Exception ex)
+             catch (Exception )
              {
                  lblStates.Text = Resources.UIMessege.msgSaveError;
                  lblStates.ForeColor = Color.Red;
@@ -357,7 +357,7 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
                 btnSave.Text = ERPSystemData.Status.Update.ToString();
                 
             }
-            catch (Exception ex)
+            catch (Exception )
             {
                 //lblError.Text = Resources.UIMessege.msgSaveError;
             }
@@ -448,7 +448,7 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
             }
 
         }
-        catch (Exception ex)
+        catch (Exception )
         {
             //lblError.Text = Resources.UIMessege.msgSaveError;
         }

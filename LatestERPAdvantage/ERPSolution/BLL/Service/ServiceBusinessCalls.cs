@@ -10,161 +10,164 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data.Common;
 using System.Configuration;
+using Advantage.ERP.DAL.DataContract;
+using Advantage.ERP.DAL;
 
 namespace Advantage.ERP.BLL
 {
-   public class ServiceBusinessCalls : IServiceBusinessCalls
-   {
-       
- #region frmCustomerMaster definitions
-       public List<gDropdownlist> pMsGetCategory(DAL.DataContract.CustomMaster objMst)
+    public class ServiceBusinessCalls : IServiceBusinessCalls
+    {
+        //commented by sumith
+        #region frmCustomerMaster definitions
+        public List<gDropdownlist> pMsGetCategory(DAL.DataContract.CustomMaster objMst)
         {
             Advantage.ERP.DAL.ServiceDatabaseCalls obj = new Advantage.ERP.DAL.ServiceDatabaseCalls();
             //DataContract.MST.CustomMaster objMst = new DataContract.MST.CustomMaster();
             // return obj.pMsGetCategory(objMst);
-            List<gDropdownlist> drpdwlst = new  List<gDropdownlist>();
+            List<gDropdownlist> drpdwlst = new List<gDropdownlist>();
+
             SqlDataReader dr = obj.pMsGetCategory(objMst);
             while (dr.Read())
             {
                 gDropdownlist drl = new gDropdownlist(dr.GetString(0), dr.GetString(1));
                 drpdwlst.Add(drl);
             }
-            return drpdwlst; 
+            return drpdwlst;
         }
 
-       public string GenerateCustomerCode(DAL.DataContract.CustomMaster objMst)
+        public string GenerateCustomerCode(DAL.DataContract.CustomMaster objMst)
         {
-           DAL.ServiceDatabaseCalls obj = new DAL.ServiceDatabaseCalls();
-           return obj.GenerateCustomerCode(objMst);
+            DAL.ServiceDatabaseCalls obj = new DAL.ServiceDatabaseCalls();
+            return obj.GenerateCustomerCode(objMst);
         }
 
-       public void gMsCreateCustDetails(DAL.DataContract.CustomMaster objMst)
+        public void gMsCreateCustDetails(DAL.DataContract.CustomMaster objMst)
         {
-           DAL.ServiceDatabaseCalls obj = new DAL.ServiceDatabaseCalls();
-           obj.gMsCreateCustDetails(objMst);
+            DAL.ServiceDatabaseCalls obj = new DAL.ServiceDatabaseCalls();
+            obj.gMsCreateCustDetails(objMst);
         }
-       public void gMsUpdateCust(DAL.DataContract.CustomMaster objMst)
+        public void gMsUpdateCust(DAL.DataContract.CustomMaster objMst)
         {
-           DAL.ServiceDatabaseCalls obj = new DAL.ServiceDatabaseCalls();
-           obj.gMsUpdateCust(objMst);
+            DAL.ServiceDatabaseCalls obj = new DAL.ServiceDatabaseCalls();
+            obj.gMsUpdateCust(objMst);
         }
-       
-       public DataSet gMsCustDetails(DAL.DataContract.CustomMaster objMst)
-       {
-           DAL.ServiceDatabaseCalls obj = new DAL.ServiceDatabaseCalls();
+
+        public DataSet gMsCustDetails(DAL.DataContract.CustomMaster objMst)
+        {
+            DAL.ServiceDatabaseCalls obj = new DAL.ServiceDatabaseCalls();
             DataSet dt = obj.gMsCustDetails(objMst);
-           //DataTable dt = new DataTable();
-           // call load method of datatable to copy content of reader 
-          // SqlCommand cmd = new SqlCommand();
-          // dt.Load(cmd.ExecuteReader()); // Load method does not close the connnection. In this case, the using statement does.
-           DataTableReader dr = dt.Tables[0].CreateDataReader();
-           while (dr.Read())
-           {
-               objMst.pCustPrefix = dr.GetValue(1).ToString();
-               objMst.pCustCode = dr.GetValue(2).ToString();
-               objMst.pCustName = dr.GetValue(3).ToString();
-               objMst.pCustAdd = dr.GetValue(4).ToString();
-               objMst.pCustServiceAddress = dr.GetValue(5).ToString();
-               objMst.pCustArea = dr.GetValue(6).ToString();
-               objMst.pCustPhone1 = dr.GetValue(7).ToString();
-               objMst.pCustPhone2 = dr.GetValue(8).ToString();
-               objMst.pCustFax = dr.GetValue(9).ToString();
-               objMst.pCustCellNo = dr.GetValue(10).ToString();
-               objMst.pCustEmail = dr.GetValue(11).ToString();
-              // objMst.pCustCreditLimit = Convert.ToDouble(dr.GetValue(12).ToString());
-               if (!string.IsNullOrEmpty(dr.GetValue(12).ToString()))
-               {
-                   objMst.pCustCreditLimit = Convert.ToDouble(dr.GetValue(12).ToString());
-               }
-               else
-               {
-                   objMst.pCustCreditLimit = 0;
-               }
-             
-               objMst.pCustVATNo = dr.GetValue(13).ToString();
-             //  objMst.pCustCreditGiven = Convert.ToDouble(dr.GetValue(14).ToString());
-               if (!string.IsNullOrEmpty(dr.GetValue(14).ToString()))
-               {
-                   objMst.pCustCreditGiven = Convert.ToDouble(dr.GetValue(14).ToString());
-               }
-               else
-               {
-                   objMst.pCustCreditGiven = 0;
-               }
-               objMst.pCustCategory = dr.GetValue(15).ToString();
-               objMst.pCustContactPerson_Technical = dr.GetValue(16).ToString();
-               objMst.pCustContactPerson_PhoneNo3 = dr.GetValue(17).ToString();
-               objMst.pCustContactPerson_Invoice = dr.GetValue(18).ToString();
-               objMst.pCustContactPerson_PhoneNo4 = dr.GetValue(19).ToString();
-               objMst.pSpeCust = dr.GetValue(20).ToString();
-               objMst.pVATApplicable = dr.GetValue(21).ToString();
-               objMst.pSVAT = dr.GetValue(23).ToString();
-               objMst.pSVAT_Cat = dr.GetValue(24).ToString();
- 
-           }
-           //return obj.gMsCustDetails(objMst);
-           return dt;
-       }
-       public DataSet gMsGetCustomerList(DAL.DataContract.CustomMaster objMst)
-       {
-           DAL.ServiceDatabaseCalls obj = new DAL.ServiceDatabaseCalls();
-           DataSet ds=obj.gMsGetCustomerList(objMst);
-           DataTableReader dr = ds.Tables[0].CreateDataReader();
-           while (dr.Read())
-           {
-               objMst.pCustPrefix = dr.GetValue(1).ToString();
-               objMst.pCustCode = dr.GetValue(2).ToString();
-               objMst.pCustName = dr.GetValue(3).ToString();
-               objMst.pCustAdd = dr.GetValue(4).ToString();
-               objMst.pCustServiceAddress = dr.GetValue(5).ToString();
-               objMst.pCustArea = dr.GetValue(6).ToString();
-               objMst.pCustPhone1 = dr.GetValue(7).ToString();
-               objMst.pCustPhone2 = dr.GetValue(8).ToString();
-               objMst.pCustFax = dr.GetValue(9).ToString();
-               objMst.pCustCellNo = dr.GetValue(10).ToString();
-               objMst.pCustEmail = dr.GetValue(11).ToString();
-               //objMst.pCustCreditLimit = Convert.ToDouble(dr.GetValue(12).ToString());
-               if (!string.IsNullOrEmpty(dr.GetValue(12).ToString()))
-               {
-                   objMst.pCustCreditLimit = Convert.ToDouble(dr.GetValue(12).ToString());
-               }
-               else
-               {
-                   objMst.pCustCreditLimit = 0;
-               }
-               objMst.pCustVATNo = dr.GetValue(13).ToString();
-               //objMst.pCustCreditGiven =Convert.ToDouble(dr.GetValue(14).ToString());
-               if (!string.IsNullOrEmpty(dr.GetValue(14).ToString()))
-               {
-                   objMst.pCustCreditGiven = Convert.ToDouble(dr.GetValue(14).ToString());
-               }
-               else
-               {
-                   objMst.pCustCreditGiven = 0;
-               }
-               objMst.pCustCategory = dr.GetValue(15).ToString();
-               objMst.pCustContactPerson_Technical = dr.GetValue(16).ToString();
-               objMst.pCustContactPerson_PhoneNo3 = dr.GetValue(17).ToString();
-               objMst.pCustContactPerson_Invoice = dr.GetValue(18).ToString();
-               objMst.pCustContactPerson_PhoneNo4 = dr.GetValue(19).ToString();
-               objMst.pSpeCust = dr.GetValue(20).ToString();
-               objMst.pVATApplicable = dr.GetValue(21).ToString();
-               objMst.pSVAT = dr.GetValue(23).ToString();
-               //objMst.pSVAT_Cat = dr.GetValue(24).ToString();
+            //DataTable dt = new DataTable();
+            // call load method of datatable to copy content of reader 
+            // SqlCommand cmd = new SqlCommand();
+            // dt.Load(cmd.ExecuteReader()); // Load method does not close the connnection. In this case, the using statement does.
+            DataTableReader dr = dt.Tables[0].CreateDataReader();
+            while (dr.Read())
+            {
+                objMst.pCustPrefix = dr.GetValue(1).ToString();
+                objMst.pCustCode = dr.GetValue(2).ToString();
+                objMst.pCustName = dr.GetValue(3).ToString();
+                objMst.pCustAdd = dr.GetValue(4).ToString();
+                objMst.pCustServiceAddress = dr.GetValue(5).ToString();
+                objMst.pCustArea = dr.GetValue(6).ToString();
+                objMst.pCustPhone1 = dr.GetValue(7).ToString();
+                objMst.pCustPhone2 = dr.GetValue(8).ToString();
+                objMst.pCustFax = dr.GetValue(9).ToString();
+                objMst.pCustCellNo = dr.GetValue(10).ToString();
+                objMst.pCustEmail = dr.GetValue(11).ToString();
+                // objMst.pCustCreditLimit = Convert.ToDouble(dr.GetValue(12).ToString());
+                if (!string.IsNullOrEmpty(dr.GetValue(12).ToString()))
+                {
+                    objMst.pCustCreditLimit = Convert.ToDouble(dr.GetValue(12).ToString());
+                }
+                else
+                {
+                    objMst.pCustCreditLimit = 0;
+                }
 
-           }
-           return ds;
-       }
+                objMst.pCustVATNo = dr.GetValue(13).ToString();
+                //  objMst.pCustCreditGiven = Convert.ToDouble(dr.GetValue(14).ToString());
+                if (!string.IsNullOrEmpty(dr.GetValue(14).ToString()))
+                {
+                    objMst.pCustCreditGiven = Convert.ToDouble(dr.GetValue(14).ToString());
+                }
+                else
+                {
+                    objMst.pCustCreditGiven = 0;
+                }
+                objMst.pCustCategory = dr.GetValue(15).ToString();
+                objMst.pCustContactPerson_Technical = dr.GetValue(16).ToString();
+                objMst.pCustContactPerson_PhoneNo3 = dr.GetValue(17).ToString();
+                objMst.pCustContactPerson_Invoice = dr.GetValue(18).ToString();
+                objMst.pCustContactPerson_PhoneNo4 = dr.GetValue(19).ToString();
+                objMst.pSpeCust = dr.GetValue(20).ToString();
+                objMst.pVATApplicable = dr.GetValue(21).ToString();
+                objMst.pSVAT = dr.GetValue(23).ToString();
+                objMst.pSVAT_Cat = dr.GetValue(24).ToString();
 
- #endregion
+            }
+            //return obj.gMsCustDetails(objMst);
+            return dt;
+        }
+        public DataSet gMsGetCustomerList(DAL.DataContract.CustomMaster objMst)
+        {
+            DAL.ServiceDatabaseCalls obj = new DAL.ServiceDatabaseCalls();
+            DataSet ds = obj.gMsGetCustomerList(objMst);
+            DataTableReader dr = ds.Tables[0].CreateDataReader();
+            while (dr.Read())
+            {
+                objMst.pCustPrefix = dr.GetValue(1).ToString();
+                objMst.pCustCode = dr.GetValue(2).ToString();
+                objMst.pCustName = dr.GetValue(3).ToString();
+                objMst.pCustAdd = dr.GetValue(4).ToString();
+                objMst.pCustServiceAddress = dr.GetValue(5).ToString();
+                objMst.pCustArea = dr.GetValue(6).ToString();
+                objMst.pCustPhone1 = dr.GetValue(7).ToString();
+                objMst.pCustPhone2 = dr.GetValue(8).ToString();
+                objMst.pCustFax = dr.GetValue(9).ToString();
+                objMst.pCustCellNo = dr.GetValue(10).ToString();
+                objMst.pCustEmail = dr.GetValue(11).ToString();
+                //objMst.pCustCreditLimit = Convert.ToDouble(dr.GetValue(12).ToString());
+                if (!string.IsNullOrEmpty(dr.GetValue(12).ToString()))
+                {
+                    objMst.pCustCreditLimit = Convert.ToDouble(dr.GetValue(12).ToString());
+                }
+                else
+                {
+                    objMst.pCustCreditLimit = 0;
+                }
+                objMst.pCustVATNo = dr.GetValue(13).ToString();
+                //objMst.pCustCreditGiven =Convert.ToDouble(dr.GetValue(14).ToString());
+                if (!string.IsNullOrEmpty(dr.GetValue(14).ToString()))
+                {
+                    objMst.pCustCreditGiven = Convert.ToDouble(dr.GetValue(14).ToString());
+                }
+                else
+                {
+                    objMst.pCustCreditGiven = 0;
+                }
+                objMst.pCustCategory = dr.GetValue(15).ToString();
+                objMst.pCustContactPerson_Technical = dr.GetValue(16).ToString();
+                objMst.pCustContactPerson_PhoneNo3 = dr.GetValue(17).ToString();
+                objMst.pCustContactPerson_Invoice = dr.GetValue(18).ToString();
+                objMst.pCustContactPerson_PhoneNo4 = dr.GetValue(19).ToString();
+                objMst.pSpeCust = dr.GetValue(20).ToString();
+                objMst.pVATApplicable = dr.GetValue(21).ToString();
+                objMst.pSVAT = dr.GetValue(23).ToString();
+                //objMst.pSVAT_Cat = dr.GetValue(24).ToString();
 
- #region User  definitions
-       public bool gMsGetUserPermissioncheck(DAL.DataContract.UserSpecificData objuMst)
+            }
+            return ds;
+        }
+
+        #endregion
+
+        #region User  definitions
+        public bool gMsGetUserPermissioncheck(DAL.DataContract.UserSpecificData objuMst)
         {
             bool success = false;
-           DAL.ServiceDatabaseCalls obj = new DAL.ServiceDatabaseCalls();
-            
-             SqlDataReader dr = obj.gMsGetUserPermission(objuMst);
+            DAL.ServiceDatabaseCalls obj = new DAL.ServiceDatabaseCalls();
+
+            SqlDataReader dr = obj.gMsGetUserPermission(objuMst);
             //Read the data
             while (dr.Read())
             {
@@ -186,56 +189,78 @@ namespace Advantage.ERP.BLL
             return success;
         }
 
-       public bool gMsCheckPassword(DAL.DataContract.UserSpecificData objuMst)
-       {
-           bool success = false;
-           DAL.ServiceDatabaseCalls obj = new DAL.ServiceDatabaseCalls();
-           SqlDataReader dr = obj.gMsCheckPassword(objuMst);
-           if (dr.HasRows)
-           {
-              while (dr.Read())
-               {
-                success = true;
-              }
-           }
-           else
-           {
-               success = false;
-           }
-           return success;
+        public bool gMsCheckPassword(DAL.DataContract.UserSpecificData objuMst)
+        {
+            bool success = false;
+            DAL.ServiceDatabaseCalls obj = new DAL.ServiceDatabaseCalls();
+            SqlDataReader dr = obj.gMsCheckPassword(objuMst);
+            if (dr.HasRows)
+            {
+                while (dr.Read())
+                {
+                    success = true;
+                }
+            }
+            else
+            {
+                success = false;
+            }
+            return success;
 
-       }
+        }
 
-       public List<TSEC_USR_OBJ> gMsCheckSpecifiedModulepermission(DAL.DataContract.UserSpecificData objuMst)
-       {
-           Advantage.ERP.DAL.ServiceDatabaseCalls obj = new Advantage.ERP.DAL.ServiceDatabaseCalls();
-           List<TSEC_USR_OBJ> tsUsrList = new List<TSEC_USR_OBJ>();
-           SqlDataReader dr = obj.gMsCheckSpecifiedModulepermission(objuMst);
+        public List<TSEC_USR_OBJ> gMsCheckSpecifiedModulepermission(DAL.DataContract.UserSpecificData objuMst)
+        {
+            Advantage.ERP.DAL.ServiceDatabaseCalls obj = new Advantage.ERP.DAL.ServiceDatabaseCalls();
+            List<TSEC_USR_OBJ> tsUsrList = new List<TSEC_USR_OBJ>();
+            SqlDataReader dr = obj.gMsCheckSpecifiedModulepermission(objuMst);
             while (dr.Read())
             {
                 TSEC_USR_OBJ uselist = new TSEC_USR_OBJ(dr.GetString(0), dr.GetString(1), dr.GetInt32(2), dr.GetInt32(3));
                 tsUsrList.Add(uselist);
             }
-           return tsUsrList;
-       }
-
-       
-
-#endregion
-
-#region Login.aspx definitions
-       public List<gDropdownlist> gMsGetBranchData(DAL.DataContract.UserSpecificData objuMst)
-       {
-        Advantage.ERP.DAL.ServiceDatabaseCalls obj = new Advantage.ERP.DAL.ServiceDatabaseCalls();
-        List<gDropdownlist> drpdwlst = new List<gDropdownlist>();
-        SqlDataReader dr = obj.gMsGetBranchData(objuMst);
-        while (dr.Read())
-        {
-            gDropdownlist drl = new gDropdownlist(dr.GetString(0), dr.GetString(1));
-            drpdwlst.Add(drl);
+            return tsUsrList;
         }
-        return drpdwlst ;
-       }
-#endregion
- }
+
+
+
+        #endregion
+
+        #region Login.aspx definitions
+        public List<gDropdownlist> gMsGetBranchData(UserSpecificData objuMst)
+        {
+            IServiceDatabaseCalls obj = new Advantage.ERP.DAL.ServiceDatabaseCalls();
+            List<gDropdownlist> drpdwlst = new List<gDropdownlist>();
+
+            SqlDataReader dr = obj.gMsGetBranchData(objuMst);
+            while (dr.Read())
+            {
+                gDropdownlist drl = new gDropdownlist(dr.GetString(0), dr.GetString(1));
+                drpdwlst.Add(drl);
+            }
+            return drpdwlst;
+        }
+        #endregion
+
+        //#region BranchLoginData
+
+        //public string GetBranchName(UserSpecificData objbrn)
+        //{
+        //    IServiceDatabaseCalls obj = new Advantage.ERP.DAL.ServiceDatabaseCalls();
+        //    //  return obj.GetBranchName(objbrn);
+        //    SqlDataReader dr = obj.GetBranchName(objbrn);
+        //    if (dr.HasRows)
+        //    {
+        //        while (dr.Read())
+        //        {
+        //            objbrn.pBrnName = dr.GetValue(0).ToString();
+        //        }
+
+        //        return objbrn.pBrnName;
+        //    }
+
+
+        //}
+        //#endregion
+    }
 }
