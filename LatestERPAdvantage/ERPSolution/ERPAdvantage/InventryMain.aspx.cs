@@ -9,7 +9,7 @@ namespace ERPAdvantage
 {
     public partial class InventryMain : System.Web.UI.Page
     {
-        public const string ModuleId = "16";// Service module ID
+        public const string ModuleId = "19";// Stores module ID
         protected void Page_Load(object sender, EventArgs e)
         {
 
