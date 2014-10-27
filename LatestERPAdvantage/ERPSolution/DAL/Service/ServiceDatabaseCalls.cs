@@ -17,26 +17,6 @@ namespace Advantage.ERP.DAL
    public class ServiceDatabaseCalls : IServiceDatabaseCalls
    {
 
-       #region frmAreaMaster
-
-       /// <summary>
-       /// Ps the ms get customer service center.
-       /// </summary>
-       /// <param name="orgCode">The org code.</param>
-       /// <returns>SqlDataReader.</returns>
-       public SqlDataReader PMsGetCustomerServiceCenter(string orgCode)
-       {
-
-           Database db = DatabaseFactory.CreateDatabase();
-           const string sqlCommand = "GenGetBranchList";
-           DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
-           db.AddInParameter(dbCommand, "@vOrgCode", DbType.String, orgCode);
-           var iDr = db.ExecuteReader(dbCommand);
-           return (SqlDataReader)((RefCountingDataReader)iDr).InnerReader;
-       }
-
-       #endregion
-
        #region frmCustomerMaster definitions
        public SqlDataReader pMsGetCategory(DAL.DataContract.CustomMaster objMst)
         {
@@ -278,19 +258,7 @@ namespace Advantage.ERP.DAL
             return (SqlDataReader)((RefCountingDataReader)iDR).InnerReader;
         }
 
-
-   //     public SqlDataReader GetBranchName(DAL.DataContract.UserSpecificData objuMst)
-   //{
-   //    Database db=DatabaseFactory.CreateDatabase();
-   //    string sqlcommand = "GetBranchname";
-   //    DbCommand dbcommand = db.GetStoredProcCommand(sqlcommand);
-   //    db.AddInParameter(dbcommand, "@vOrgCode", DbType.String,objuMst.pOrgCode);
-   //    db.AddInParameter(dbcommand, "@vBrnCode", DbType.String, objuMst.pBrnCode);
-   //    IDataReader iDR = db.ExecuteReader(dbcommand);
-   //    return (SqlDataReader)((RefCountingDataReader)iDR).InnerReader;
   
-   //}
-
  #endregion
   }
 }

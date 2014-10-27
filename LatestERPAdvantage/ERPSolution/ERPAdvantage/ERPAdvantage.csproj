@@ -97,6 +97,7 @@
     <Content Include="Login\LogMeIn.aspx" />
     <Content Include="ServiceMain.aspx" />
     <Content Include="Service\ServiceMaster\ApplianceMaster.aspx" />
+    <Content Include="Service\ServiceMaster\AreaMaster.aspx" />
     <Content Include="Service\ServiceMaster\CustomerMaster.aspx" />
     <Content Include="Styles\generic.css" />
     <Content Include="Styles\Site.css" />
@@ -209,6 +210,13 @@
     <Compile Include="Service\ServiceMaster\ApplianceMaster.aspx.designer.cs">
       <DependentUpon>ApplianceMaster.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Service\ServiceMaster\AreaMaster.aspx.cs">
+      <DependentUpon>AreaMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\ServiceMaster\AreaMaster.aspx.designer.cs">
+      <DependentUpon>AreaMaster.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Service\ServiceMaster\CustomerMaster.aspx.cs">
       <DependentUpon>CustomerMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -225,7 +233,9 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="App_Code\UIControl.cs" />
-    <Compile Include="App_Code\UIvalidations.cs" />
+    <Compile Include="App_Code\UIvalidations.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
