@@ -17,6 +17,7 @@
         <Items>
             <asp:MenuItem Text="Master" Value="Master">
                 <asp:MenuItem NavigateUrl="~/Service/ServiceMaster/CustomerMaster.aspx" Text="Customer Master" Value="Customer Master"></asp:MenuItem>
+                <asp:MenuItem NavigateUrl="~/Service/ServiceMaster/ApplianceMaster.aspx" Text="Appliance Master" Value="Appliance Master"></asp:MenuItem>
             </asp:MenuItem>
             <asp:MenuItem Text="Transaction" Value="Transaction"></asp:MenuItem>
             <asp:MenuItem Text="Report" Value="Report"></asp:MenuItem>

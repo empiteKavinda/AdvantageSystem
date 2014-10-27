@@ -48,6 +48,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Prasad\AjaxControllsNet4\AjaxControlToolkit.dll</HintPath>
     </Reference>
+    <Reference Include="AjaxMin">
+      <HintPath>..\..\..\..\..\AjaxControlToolkit.Binary.NET45\AjaxMin.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Practices.EnterpriseLibrary.Common, Version=5.0.414.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>C:\Users\Administrator\Desktop\elIBRARY\Microsoft.Practices.EnterpriseLibrary.Common.dll</HintPath>
@@ -93,6 +96,7 @@
     <Content Include="InventryMain.aspx" />
     <Content Include="Login\LogMeIn.aspx" />
     <Content Include="ServiceMain.aspx" />
+    <Content Include="Service\ServiceMaster\ApplianceMaster.aspx" />
     <Content Include="Service\ServiceMaster\CustomerMaster.aspx" />
     <Content Include="Styles\generic.css" />
     <Content Include="Styles\Site.css" />
@@ -197,6 +201,13 @@
     </Compile>
     <Compile Include="ServiceMain.aspx.designer.cs">
       <DependentUpon>ServiceMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\ServiceMaster\ApplianceMaster.aspx.cs">
+      <DependentUpon>ApplianceMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\ServiceMaster\ApplianceMaster.aspx.designer.cs">
+      <DependentUpon>ApplianceMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="Service\ServiceMaster\CustomerMaster.aspx.cs">
       <DependentUpon>CustomerMaster.aspx</DependentUpon>
