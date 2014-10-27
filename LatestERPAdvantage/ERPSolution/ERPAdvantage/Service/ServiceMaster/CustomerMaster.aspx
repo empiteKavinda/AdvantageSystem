@@ -31,6 +31,13 @@
           <asp:ScriptManager ID="ScriptManager1" runat="server">
           </asp:ScriptManager>
           
+          <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.9em" PathSeparator=" : ">
+              <CurrentNodeStyle ForeColor="#333333" />
+              <NodeStyle Font-Bold="True" ForeColor="#990000" />
+              <PathSeparatorStyle Font-Bold="True" ForeColor="#990000" />
+              <RootNodeStyle Font-Bold="True" ForeColor="#FF8000" />
+          </asp:SiteMapPath>
+          
           <table  id="tblMain" class="style1">
               <tr>
                   <td>
