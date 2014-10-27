@@ -50,8 +50,6 @@ D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\obj\Debug\WSLibrary.dll
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\obj\Debug\WSLibrary.pdb
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.Unity.dll
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.Unity.Interception.dll
-D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
-D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.Unity.xml
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.Unity.Interception.xml
@@ -74,3 +72,5 @@ G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\WSLibrary\b
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.Unity.Interception.xml
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\WSLibrary\obj\Debug\WSLibrary.dll
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\WSLibrary\obj\Debug\WSLibrary.pdb
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.Unity.pdb
+D:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
