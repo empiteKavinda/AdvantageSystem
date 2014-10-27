@@ -51,7 +51,3 @@ E:\Project\ERP\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.ServiceLocation.dll
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.Unity.dll
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.Unity.Interception.dll
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.Unity.pdb
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.Unity.xml
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.Unity.Interception.pdb
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\BLL\bin\Debug\Microsoft.Practices.Unity.Interception.xml

@@ -130,7 +130,3 @@ E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practic
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.ServiceLocation.dll
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.dll
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.Interception.dll
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.pdb
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.xml
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.Interception.pdb
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.Interception.xml

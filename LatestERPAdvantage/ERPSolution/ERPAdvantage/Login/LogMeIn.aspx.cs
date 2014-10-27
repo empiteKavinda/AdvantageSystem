@@ -45,8 +45,7 @@ namespace ERPAdvantage.Login
         protected void ddlBranch_SelectedIndexChanged(object sender, EventArgs e)
         {
             txtBranchName.Text = ddlBranch.SelectedValue;
-       
-           
+                 
         }
 
         private void LoginToTheSystem()

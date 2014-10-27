@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Data;
+using System.Data.SqlClient;
 using System.Configuration;
 using System.Collections;
 using System.Web.UI.WebControls;
@@ -14,11 +15,13 @@ using System.Text;
 //using System.String;
 using Microsoft.VisualBasic;
 using Advantage.ERP.DAL.DataContract;
+using Advantage.ERP.BLL;
+using ERPAdvantage;
 
 /// <summary>
 /// Summary description for UIvalidations
 /// </summary>
-public class UIvalidations
+public class UIvalidations:Page
 {
 
     public string GenerateCustomerCode(CustomMaster objMst)
@@ -253,6 +256,37 @@ public class UIvalidations
           str.Append(result[i].ToString("x2"));
         }
         return str.ToString(); 
+    }
+
+
+    public bool CheckModuleAccess(Advantage.ERP.DAL.DataContract.UserSpecificData objumst)
+    {
+        bool success = false;
+        // When retrieving an object from session state, cast it to 
+        // the appropriate type.
+        TSEC_USR_OBJData objTs = new TSEC_USR_OBJData();
+        
+        List<TSEC_USR_OBJ> userMlist = (List<TSEC_USR_OBJ>)Session["UserPerModules"];
+        UserSpecificData useObj = (UserSpecificData)Session["UserobjuMst"];
+       // list = (List<TSEC_USR_OBJ>)Session["UserPerModules"];
+        for (int i = 0; i < userMlist.Count; i++)
+        {
+            objTs.pSUSR_MOD_ID = userMlist[i].SUSR_MOD_ID;
+            objTs.pSUSR_OBJ_ID = userMlist[i].SUSR_OBJ_ID;
+            objTs.pSUSR_ORG_CD = userMlist[i].SUSR_ORG_CD;
+            objTs.pSUSR_USR_ID = userMlist[i].SUSR_USR_ID;
+            if ((Convert.ToString(userMlist[i].SUSR_MOD_ID) == ServiceMain.ModuleId) && (objTs.pSUSR_OBJ_ID == 4))
+            {
+                objumst.pModType = "Service";
+                objumst.pObjId = Convert.ToString(objTs.pSUSR_OBJ_ID);
+                success = true;
+                break;
+            }
+        }
+        objumst.pUserId = useObj.pUserId;
+        objumst.pBrnCode = useObj.pBrnCode;
+
+        return success;
     }
 
     }

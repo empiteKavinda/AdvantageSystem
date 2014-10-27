@@ -45,6 +45,8 @@
     <Content Include="Microsoft.Practices.EnterpriseLibrary.Common.dll" />
     <Content Include="Microsoft.Practices.EnterpriseLibrary.Data.dll" />
     <Content Include="Microsoft.Practices.ServiceLocation.dll" />
+    <Content Include="Microsoft.Practices.Unity.dll" />
+    <Content Include="Microsoft.Practices.Unity.Interception.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
