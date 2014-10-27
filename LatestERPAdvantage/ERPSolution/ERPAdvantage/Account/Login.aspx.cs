@@ -29,7 +29,7 @@ namespace ERPAdvantage.Account
 
         private void gMsGetBranchList()
         {
-            DataSet tmpDataSet;
+            
             UIControl uicon = new UIControl();
 
            // Page page = (Page)HttpContext.Current.Handler;
@@ -56,7 +56,7 @@ namespace ERPAdvantage.Account
 
         private void Cmd_Login_Click()
         {
-           bool success=false;
+         //  bool success=false;
             //Creating objects for general classes
             UserSpecificData objumst = new UserSpecificData();
             UIvalidations uiv = new UIvalidations();

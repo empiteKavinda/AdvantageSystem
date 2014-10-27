@@ -11,6 +11,7 @@ using Microsoft.Practices.EnterpriseLibrary.Data;
 using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using Microsoft.Practices.EnterpriseLibrary.Common;
 
+
 namespace Advantage.ERP.DAL
 {
    public class ServiceDatabaseCalls : IServiceDatabaseCalls
@@ -19,6 +20,7 @@ namespace Advantage.ERP.DAL
 #region frmCustomerMaster definitions
        public SqlDataReader pMsGetCategory(DAL.DataContract.CustomMaster objMst)
         {
+           
             // Create the Database object, using the default database service. The
             // default database service is determined through configuration.
             Database db = DatabaseFactory.CreateDatabase();
@@ -40,6 +42,7 @@ namespace Advantage.ERP.DAL
 
         public string GenerateCustomerCode(DAL.DataContract.CustomMaster objMst)
         {
+            
             // string custName = string.Empty;
             // Create the Database object, using the default database service. The
             // default database service is determined through configuration.
@@ -65,6 +68,7 @@ namespace Advantage.ERP.DAL
 
         public void gMsCreateCustDetails(DAL.DataContract.CustomMaster objMst)
         {
+            
             // Create the Database object, using the default database service. The
             // default database service is determined through configuration.
             Database db = DatabaseFactory.CreateDatabase();
@@ -254,6 +258,18 @@ namespace Advantage.ERP.DAL
             return (SqlDataReader)((RefCountingDataReader)iDR).InnerReader;
         }
 
+
+   //     public SqlDataReader GetBranchName(DAL.DataContract.UserSpecificData objuMst)
+   //{
+   //    Database db=DatabaseFactory.CreateDatabase();
+   //    string sqlcommand = "GetBranchname";
+   //    DbCommand dbcommand = db.GetStoredProcCommand(sqlcommand);
+   //    db.AddInParameter(dbcommand, "@vOrgCode", DbType.String,objuMst.pOrgCode);
+   //    db.AddInParameter(dbcommand, "@vBrnCode", DbType.String, objuMst.pBrnCode);
+   //    IDataReader iDR = db.ExecuteReader(dbcommand);
+   //    return (SqlDataReader)((RefCountingDataReader)iDR).InnerReader;
+  
+   //}
 
  #endregion
   }
