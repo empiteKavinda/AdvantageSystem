@@ -81,6 +81,7 @@
     <Content Include="InventryMain.aspx" />
     <Content Include="Login\LogMeIn.aspx" />
     <Content Include="ServiceMain.aspx" />
+    <Content Include="Service\ServiceMaster\AreaMaster.aspx" />
     <Content Include="Service\ServiceMaster\CustomerMaster.aspx" />
     <Content Include="Styles\generic.css" />
     <Content Include="Styles\Site.css" />
@@ -185,6 +186,13 @@
     </Compile>
     <Compile Include="ServiceMain.aspx.designer.cs">
       <DependentUpon>ServiceMain.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\ServiceMaster\AreaMaster.aspx.cs">
+      <DependentUpon>AreaMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\ServiceMaster\AreaMaster.aspx.designer.cs">
+      <DependentUpon>AreaMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="Service\ServiceMaster\CustomerMaster.aspx.cs">
       <DependentUpon>CustomerMaster.aspx</DependentUpon>

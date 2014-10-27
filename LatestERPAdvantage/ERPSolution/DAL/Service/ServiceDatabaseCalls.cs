@@ -17,7 +17,27 @@ namespace Advantage.ERP.DAL
    public class ServiceDatabaseCalls : IServiceDatabaseCalls
    {
 
-#region frmCustomerMaster definitions
+       #region frmAreaMaster
+
+       /// <summary>
+       /// Ps the ms get customer service center.
+       /// </summary>
+       /// <param name="orgCode">The org code.</param>
+       /// <returns>SqlDataReader.</returns>
+       public SqlDataReader PMsGetCustomerServiceCenter(string orgCode)
+       {
+
+           Database db = DatabaseFactory.CreateDatabase();
+           const string sqlCommand = "GenGetBranchList";
+           DbCommand dbCommand = db.GetStoredProcCommand(sqlCommand);
+           db.AddInParameter(dbCommand, "@vOrgCode", DbType.String, orgCode);
+           var iDr = db.ExecuteReader(dbCommand);
+           return (SqlDataReader)((RefCountingDataReader)iDr).InnerReader;
+       }
+
+       #endregion
+
+       #region frmCustomerMaster definitions
        public SqlDataReader pMsGetCategory(DAL.DataContract.CustomMaster objMst)
         {
            

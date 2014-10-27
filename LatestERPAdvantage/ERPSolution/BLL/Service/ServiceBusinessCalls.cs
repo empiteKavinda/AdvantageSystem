@@ -17,7 +17,25 @@ namespace Advantage.ERP.BLL
 {
     public class ServiceBusinessCalls : IServiceBusinessCalls
     {
-        //commented by sumith
+
+        #region frmAreaMaster from Kavinda
+
+        public List<gDropdownlist> PMsGetCustomerServiceCenter(string orgCode)
+        {
+            IServiceDatabaseCalls obj = new ServiceDatabaseCalls();
+            var drpdwlst = new List<gDropdownlist>();
+            var dr = obj.PMsGetCustomerServiceCenter(orgCode);
+            while (dr.Read())
+            {
+                var drl = new gDropdownlist(dr.GetString(0), dr.GetString(1));
+                drpdwlst.Add(drl);
+            }
+            return drpdwlst;
+           
+        }
+
+        #endregion
+
         #region frmCustomerMaster definitions
         public List<gDropdownlist> pMsGetCategory(DAL.DataContract.CustomMaster objMst)
         {
