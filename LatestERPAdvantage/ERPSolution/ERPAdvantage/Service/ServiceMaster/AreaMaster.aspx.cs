@@ -11,6 +11,8 @@ namespace ERPAdvantage.Service.ServiceMaster
 {
     public partial class AreaMaster : System.Web.UI.Page
     {
+        ADTWebService wsoj = new ADTWebService();
+        UserSpecificData objuMst = new UserSpecificData();
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -36,10 +38,10 @@ namespace ERPAdvantage.Service.ServiceMaster
         private void GetCustomerServiceCenter()
         {
             var uicon = new UIControl();
-            var wsoj = new ADTWebService();
-            var orgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
-            var drplist = wsoj.PMsGetCustomerServiceCenter(orgCode);
-            uicon.FillDropdownList(ddlCutomerServiceCenter, drplist, "COM_DOM_CODE", "COM_DOM_DESC");
+            ADTWebService wsoj = new ADTWebService();
+            objuMst.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
+            var drplist = wsoj.gMsGetBranchData(objuMst);
+            uicon.FillDropdownList(ddlCutomerServiceCenter, drplist, "COM_ORG_NAME", "COM_ORG_CD");
         }
     }
 }

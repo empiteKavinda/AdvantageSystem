@@ -20,19 +20,19 @@ namespace Advantage.ERP.BLL
 
         #region frmAreaMaster from Kavinda
 
-        public List<gDropdownlist> PMsGetCustomerServiceCenter(string orgCode)
-        {
-            IServiceDatabaseCalls obj = new ServiceDatabaseCalls();
-            var drpdwlst = new List<gDropdownlist>();
-            var dr = obj.PMsGetCustomerServiceCenter(orgCode);
-            while (dr.Read())
-            {
-                var drl = new gDropdownlist(dr.GetString(0), dr.GetString(1));
-                drpdwlst.Add(drl);
-            }
-            return drpdwlst;
+        //public List<gDropdownlist> PMsGetCustomerServiceCenter(string orgCode)
+        //{
+        //    IServiceDatabaseCalls obj = new ServiceDatabaseCalls();
+        //    var drpdwlst = new List<gDropdownlist>();
+        //    //var dr = obj.PMsGetCustomerServiceCenter(orgCode);
+        //    while (dr.Read())
+        //    {
+        //        var drl = new gDropdownlist(dr.GetString(0), dr.GetString(1));
+        //        drpdwlst.Add(drl);
+        //    }
+        //    return drpdwlst;
            
-        }
+        //}
 
         #endregion
 

@@ -18,12 +18,12 @@ public class ADTWebService : WebServiceBase
 
     #region AreaMaster.aspx definitions
 
-    [WebMethod]
-    public List<gDropdownlist> PMsGetCustomerServiceCenter(string orgCode)
-    {
-        IServiceBusinessCalls bsOj = new ServiceBusinessCalls();
-        return bsOj.PMsGetCustomerServiceCenter(orgCode);
-    }
+    //[WebMethod]
+    //public List<gDropdownlist> PMsGetCustomerServiceCenter(string orgCode)
+    //{
+    //    IServiceBusinessCalls bsOj = new ServiceBusinessCalls();
+    //    return bsOj.PMsGetCustomerServiceCenter(orgCode);
+    //}
 
     #endregion
 
