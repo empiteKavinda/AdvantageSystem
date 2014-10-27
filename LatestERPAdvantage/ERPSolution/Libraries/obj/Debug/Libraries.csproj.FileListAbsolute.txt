@@ -1,0 +1,5 @@
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\Libraries\bin\Debug\Libraries.dll
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\Libraries\bin\Debug\Libraries.pdb
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\Libraries\obj\Debug\Libraries.csprojResolveAssemblyReference.cache
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\Libraries\obj\Debug\Libraries.dll
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\Libraries\obj\Debug\Libraries.pdb

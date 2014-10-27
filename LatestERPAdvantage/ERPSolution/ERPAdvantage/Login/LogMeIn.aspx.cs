@@ -39,25 +39,26 @@ namespace ERPAdvantage.Login
 
              objuMst.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
              List<gDropdownlist> drplist = wsoj.gMsGetBranchData(objuMst);
-            uicon.FillDropdownList(ddlBranch, drplist, "COM_ORG_CD", "COM_ORG_NAME");
+             uicon.FillDropdownList(ddlBranch, drplist, "COM_ORG_NAME", "COM_ORG_CD");
         }
 
         protected void ddlBranch_SelectedIndexChanged(object sender, EventArgs e)
         {
+            txtBranchName.Text = ddlBranch.SelectedValue;
+       
            
         }
 
-        private void Cmd_Login_Click()
+        private void LoginToTheSystem()
         {
             bool success = false;
             //Creating objects for general classes
            
             UIvalidations uiv = new UIvalidations();
-            //objuMst.pPwd = ((TextBox)this.LoginUser.FindControl("Password")).Text;
-            objuMst.pPwd = ((TextBox)this.Password).Text;            
-            //objuMst.pUserId = ((TextBox)this.LoginUser.FindControl("UserName")).Text;
-            objuMst.pUserId = ((TextBox)this.UserName).Text;
+            objuMst.pUserId = UserName.Text; 
+            objuMst.pPwd = Password.Text;
             objuMst.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
+            objuMst.pBrnCode = ddlBranch.SelectedItem.Text;
             
             success = wsoj.gMsCheckPassword(objuMst);
             List<TSEC_USR_OBJ> list = wsoj.gMsCheckSpecifiedModulepermission(objuMst);
@@ -78,7 +79,7 @@ namespace ERPAdvantage.Login
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-            Cmd_Login_Click();
+            LoginToTheSystem();
         }
     }
 }

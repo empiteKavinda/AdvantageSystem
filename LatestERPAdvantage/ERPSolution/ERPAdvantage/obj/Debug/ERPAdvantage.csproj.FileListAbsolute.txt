@@ -80,9 +80,6 @@ E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\ERPAdvantage.pdb
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Advantage.ERP.BLL.dll
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Advantage.ERP.DAL.dll
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\WSLibrary.dll
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.ServiceLocation.dll
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Advantage.ERP.BLL.pdb
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Advantage.ERP.DAL.pdb
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\WSLibrary.pdb
@@ -103,13 +100,6 @@ D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Advantage.ERP.BLL
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Advantage.ERP.DAL.pdb
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\WSLibrary.pdb
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\obj\Debug\ERPAdvantage.pdb
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.dll
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.Interception.dll
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.EnterpriseLibrary.Common.xml
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.ServiceLocation.xml
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.xml
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.Interception.xml
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.dll
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.Interception.dll
 D:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.EnterpriseLibrary.Data.xml
@@ -135,3 +125,12 @@ G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\ERPAdvantag
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.Interception.pdb
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\ERPAdvantage\obj\Debug\ERPAdvantage.dll
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\ERPAdvantage\obj\Debug\ERPAdvantage.pdb
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.EnterpriseLibrary.Data.dll
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.EnterpriseLibrary.Common.dll
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.ServiceLocation.dll
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.dll
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.Interception.dll
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.pdb
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.xml
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.Interception.pdb
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\ERPAdvantage\bin\Microsoft.Practices.Unity.Interception.xml

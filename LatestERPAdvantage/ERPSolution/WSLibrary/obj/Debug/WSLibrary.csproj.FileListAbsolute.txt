@@ -28,9 +28,6 @@ E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Prac
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.Unity.Interception.dll
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Advantage.ERP.BLL.pdb
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Advantage.ERP.DAL.pdb
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Data.xml
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.EnterpriseLibrary.Common.xml
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.ServiceLocation.xml
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.Unity.xml
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.Unity.Interception.xml
 E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\obj\Debug\WSLibrary.csprojResolveAssemblyReference.cache
@@ -74,3 +71,5 @@ G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\WSLibrary\b
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.Unity.Interception.xml
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\WSLibrary\obj\Debug\WSLibrary.dll
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\WSLibrary\obj\Debug\WSLibrary.pdb
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.Unity.pdb
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\WSLibrary\bin\Debug\Microsoft.Practices.Unity.Interception.pdb

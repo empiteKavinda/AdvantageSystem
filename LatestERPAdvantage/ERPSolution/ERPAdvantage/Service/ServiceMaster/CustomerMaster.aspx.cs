@@ -133,8 +133,8 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
 
          objumst.pUserId = useObj.pUserId;
          objumst.pBrnCode = useObj.pBrnCode;
-         //objumst.pModType = useObj.pModType;
-         //objumst.pObjId = useObj.pObjId;
+         objumst.pModType = "Service";
+        objumst.pObjId = "4";
        
       
          success = wsoj.gMsGetUserPermissioncheck(objumst);
