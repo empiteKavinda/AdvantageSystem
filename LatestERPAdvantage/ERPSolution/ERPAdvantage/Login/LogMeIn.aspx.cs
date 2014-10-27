@@ -49,7 +49,7 @@ namespace ERPAdvantage.Login
             
         }
 
-        private void Cmd_Login_Click()
+        private void LoginToTheSystem()
         {
             bool success = false;
             //Creating objects for general classes
@@ -77,7 +77,7 @@ namespace ERPAdvantage.Login
 
         protected void LoginButton_Click(object sender, EventArgs e)
         {
-            Cmd_Login_Click();
+            LoginToTheSystem();
         }
     }
 }
