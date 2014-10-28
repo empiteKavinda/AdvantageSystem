@@ -31,7 +31,7 @@ namespace Advantage.ERP.BLL
         //        drpdwlst.Add(drl);
         //    }
         //    return drpdwlst;
-           
+
         //}
 
         #endregion
@@ -260,7 +260,7 @@ namespace Advantage.ERP.BLL
         }
         #endregion
 
-<<<<<<< HEAD
+
         #region ApplianceMaster
         public List<gDropdownlist> pMsGetAppliancecategory(DAL.DataContract.Appliancemst objapp)
         {
@@ -274,10 +274,7 @@ namespace Advantage.ERP.BLL
             }
             return droplist;
         }
-        
+
         #endregion
-=======
-        
->>>>>>> d834fa163aa8287be10edb087b8060bebb75aa9a
     }
 }
