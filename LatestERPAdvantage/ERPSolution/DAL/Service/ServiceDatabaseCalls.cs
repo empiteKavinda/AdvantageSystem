@@ -292,5 +292,23 @@ namespace Advantage.ERP.DAL
    //}
 
  #endregion
-  }
+
+       #region ApplianceMaster
+
+        public SqlDataReader gMsGetAppliancecategory(DAL.DataContract.Appliancemst objapp)
+        {
+           // Advantage.ERP.DAL.DataContract.UserSpecificData udc = new DataContract.UserSpecificData();           
+            Database db = DatabaseFactory.CreateDatabase();
+            string sqlcomm = "gMsGetDomainType";
+            DbCommand dbCommand = db.GetStoredProcCommand(sqlcomm);
+            db.AddInParameter(dbCommand, "@pOrgCode", DbType.String, objapp.pOrgCode);            
+            db.AddInParameter(dbCommand, "@pDomType", DbType.String, objapp.pAppCategory);
+            
+            IDataReader idr = db.ExecuteReader(dbCommand);
+            return (SqlDataReader)((RefCountingDataReader)idr).InnerReader;
+        }
+
+
+       #endregion ApplianceMaster
+   }
 }

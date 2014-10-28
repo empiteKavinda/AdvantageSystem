@@ -10,6 +10,7 @@ using System.Web.UI.HtmlControls;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Advantage.ERP.DAL.DataContract;
 
 [WebService(Namespace = "http://tempuri2.org/")]
 [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
@@ -38,8 +39,9 @@ public string HelloWorld()
 public List<gDropdownlist> pMsGetCategory(Advantage.ERP.DAL.DataContract.CustomMaster objMst)
 {
     Advantage.ERP.BLL.ServiceBusinessCalls bsOj = new Advantage.ERP.BLL.ServiceBusinessCalls();
-
-    return bsOj.pMsGetCategory(objMst);
+    
+   return bsOj.pMsGetCategory(objMst);
+   
 }
 
 [WebMethod]
@@ -116,18 +118,17 @@ public List<TSEC_USR_OBJ> gMsCheckSpecifiedModulepermission(Advantage.ERP.DAL.Da
 
 #endregion
 
-    #region Branchdata
-//[WebMethod]
-//public string GetBranchName(Advantage.ERP.DAL.DataContract.UserSpecificData objMst)
-//{
-//    Advantage.ERP.BLL.ServiceBusinessCalls obj = new Advantage.ERP.BLL.ServiceBusinessCalls();
-//    return obj.GetBranchName(objMst);
-    
-//}
-
+    #region ApplianceMaster
+    [WebMethod]
+public List<gDropdownlist> pMsGetAppliancecategory(Advantage.ERP.DAL.DataContract.Appliancemst apm)
+{
+    ServiceBusinessCalls bsobj = new Advantage.ERP.BLL.ServiceBusinessCalls();
+    return bsobj.pMsGetAppliancecategory(apm);
+}
 
 
     #endregion
 
+      
 }
 

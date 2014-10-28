@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataContract\Service\Appliancemst.cs" />
     <Compile Include="DataContract\Service\CustomMaster.cs" />
     <Compile Include="DataContract\TSEC_USR_OBJData.cs" />
     <Compile Include="DataContract\UserSpecificData.cs" />

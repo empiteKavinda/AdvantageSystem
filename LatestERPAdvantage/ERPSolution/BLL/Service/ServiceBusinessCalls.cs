@@ -260,25 +260,20 @@ namespace Advantage.ERP.BLL
         }
         #endregion
 
-        //#region BranchLoginData
-
-        //public string GetBranchName(UserSpecificData objbrn)
-        //{
-        //    IServiceDatabaseCalls obj = new Advantage.ERP.DAL.ServiceDatabaseCalls();
-        //    //  return obj.GetBranchName(objbrn);
-        //    SqlDataReader dr = obj.GetBranchName(objbrn);
-        //    if (dr.HasRows)
-        //    {
-        //        while (dr.Read())
-        //        {
-        //            objbrn.pBrnName = dr.GetValue(0).ToString();
-        //        }
-
-        //        return objbrn.pBrnName;
-        //    }
-
-
-        //}
-        //#endregion
+        #region ApplianceMaster
+        public List<gDropdownlist> pMsGetAppliancecategory(DAL.DataContract.Appliancemst objapp)
+        {
+            Advantage.ERP.DAL.ServiceDatabaseCalls obj = new Advantage.ERP.DAL.ServiceDatabaseCalls();
+            List<gDropdownlist> droplist = new List<gDropdownlist>();
+            SqlDataReader sdr = obj.gMsGetAppliancecategory(objapp);
+            while (sdr.Read())
+            {
+                gDropdownlist drl = new gDropdownlist(sdr.GetString(0), sdr.GetString(1));
+                droplist.Add(drl);
+            }
+            return droplist;
+        }
+        
+        #endregion
     }
 }

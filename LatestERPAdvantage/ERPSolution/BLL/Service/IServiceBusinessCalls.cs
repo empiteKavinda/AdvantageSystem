@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Data;
 
+
 namespace Advantage.ERP.BLL
 {
     public interface IServiceBusinessCalls
@@ -16,5 +17,6 @@ namespace Advantage.ERP.BLL
         List<TSEC_USR_OBJ> gMsCheckSpecifiedModulepermission(DAL.DataContract.UserSpecificData objuMst);
         List<gDropdownlist> gMsGetBranchData(DAL.DataContract.UserSpecificData objuMst);
       //  List<gDropdownlist> PMsGetCustomerServiceCenter(string orgCode);
+        List<gDropdownlist> pMsGetAppliancecategory(DAL.DataContract.Appliancemst objapp);
     }
 }

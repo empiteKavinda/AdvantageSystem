@@ -58,7 +58,13 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
        objMst.pDomType = ERPSystemData.COM_DOM_TYPE.PREFIX.ToString();
        List<gDropdownlist> drplist = wsoj.pMsGetCategory(objMst);
        uicon.FillDropdownList(ddlPrefix, drplist, "COM_DOM_CODE", "COM_DOM_DESC");
-            
+       
+       
+
+
+
+
+
     }
   private void getCategory()
     {

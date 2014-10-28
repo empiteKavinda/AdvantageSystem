@@ -19,7 +19,8 @@ public class ERPSystemData
     {
         CUSTOMER_CATEGORY,
         AREA,
-        PREFIX
+        PREFIX,
+        APPLIANCE_CATEGORY
     }
 
     public enum COM_DOM_ORG_CODE

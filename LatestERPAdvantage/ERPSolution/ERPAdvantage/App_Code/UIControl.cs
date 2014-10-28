@@ -22,17 +22,7 @@ public class UIControl
 	}
 
 
-// public void FillDropdownList(DropDownList dropdownList,DataTable  dataTable, string datavalueField, string dataTextField)
-//{
-//    DropDownList objDropDownList = new DropDownList();
-//    objDropDownList = dropdownList;
-	
-//    objDropDownList.DataValueField = datavalueField;
-//    objDropDownList.DataTextField = dataTextField;
-//    objDropDownList.CssClass ="select";
-//    objDropDownList.DataSource = dataTable;
-//    objDropDownList.DataBind();
-//}
+
 
     public void FillDropdownList(DropDownList dropdownList, List<gDropdownlist> list, string datavalueField, string dataTextField)
  {
@@ -45,16 +35,9 @@ public class UIControl
      objDropDownList.DataTextField = dataTextField;
      objDropDownList.CssClass = "select";
      objDropDownList.DataSource = list;
-     objDropDownList.DataBind();
-
-     //iCount = objDropDownList.Items.Count;
-     //objDropDownList.Items.Add("---Select---");
-     //objDropDownList.SelectedIndex = iCount;
+     objDropDownList.DataBind();   
     objDropDownList.Items.Insert(0, new ListItem("---Select---", "-1"));
-   // objDropDownList.Items.Insert(0, new ListItem(" ", " -1"));
-
-   //  objDropDownList.Text = "--Select--";
-   // objDropDownList.SelectedItem.Text = "--Select--";
+  
   
  }
 }
