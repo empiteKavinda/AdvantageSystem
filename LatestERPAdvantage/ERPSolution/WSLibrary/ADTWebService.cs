@@ -75,6 +75,7 @@ public DataSet getCustDetails(Advantage.ERP.DAL.DataContract.CustomMaster objMst
    return bsOj.gMsCustDetails(objMst);
 }
  [WebMethod]
+
 public DataSet gMsGetCustomerList(Advantage.ERP.DAL.DataContract.CustomMaster objMst)
 {
     Advantage.ERP.BLL.ServiceBusinessCalls bsOj = new Advantage.ERP.BLL.ServiceBusinessCalls();
@@ -120,12 +121,27 @@ public List<TSEC_USR_OBJ> gMsCheckSpecifiedModulepermission(Advantage.ERP.DAL.Da
 
     #region ApplianceMaster
     [WebMethod]
+
 public List<gDropdownlist> pMsGetAppliancecategory(Advantage.ERP.DAL.DataContract.Appliancemst apm)
 {
     ServiceBusinessCalls bsobj = new Advantage.ERP.BLL.ServiceBusinessCalls();
     return bsobj.pMsGetAppliancecategory(apm);
 }
+   
+    [WebMethod]
+    public DataSet GetApplianceList(Advantage.ERP.DAL.DataContract.Appliancemst apm)
+    {
+        ServiceBusinessCalls objapp = new ServiceBusinessCalls();
+        return objapp.gMsGetApplianceList(apm);
+    }
 
+    [WebMethod]
+    public SqlDataReader GetApplianceDatabyAppCode(Advantage.ERP.DAL.DataContract.Appliancemst objapp)
+    {
+        ServiceBusinessCalls objbservice = new ServiceBusinessCalls();
+        return objbservice.gMsGetApplianceByAppCode(objapp);
+        
+    }
 
     #endregion
 

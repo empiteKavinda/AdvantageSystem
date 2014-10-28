@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using Advantage.ERP.BLL;
 using Advantage.ERP.DAL.DataContract;
+using System.Data;
+using System.Data.SqlClient;
 
 
 
@@ -26,11 +28,66 @@ namespace ERPAdvantage.Service.ServiceMaster
         
         }
 
+        private void GetAppliance()
+        {
+            UIControl ui = new UIControl();
+            ADTWebService wser = new ADTWebService();
+            Appliancemst app = new Appliancemst();
+            app.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
+            app.pApplianceCode = txtappliancecode.Text.Trim();
+            app.pApplianceName = txtappliancedesc.Text.Trim();
+            DataSet ds = wser.GetApplianceList(app);
+            GridVapplist.DataSource = ds;
+            GridVapplist.DataBind();
+        }
+
+
+        private void GetApplianceDetails()
+        {
+            UIControl uic = new UIControl();
+            ADTWebService ws = new ADTWebService();
+            Appliancemst objapp = new Appliancemst();
+            objapp.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
+            objapp.pApplianceCode = txtappliancecode.Text.ToString();
+            IDataReader  mydata = ws.GetApplianceDatabyAppCode(objapp);
+            while (mydata.Read())
+            {
+                txtappliancedesc.Text = mydata[1].ToString();
+                txtstoragecost.Text = mydata[2].ToString();
+                txtestimationcost.Text = mydata[3].ToString();
+                cboappcategory.SelectedValue = mydata[4].ToString();
+            }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             GetAppliancecategory();
+            GetAppliance();            
         }
 
-        public string pOrgCode { get; set; }
+        protected void cmdgetlist_Click(object sender, EventArgs e)
+        {
+            GetAppliance();
+        }
+
+        protected void cmdselectapp_Click(object sender, EventArgs e)
+        {
+            
+           
+        }
+
+        protected void txtappliancecode_TextChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            GetApplianceDetails();
+        }
+
+        
+
+     
     }
 }

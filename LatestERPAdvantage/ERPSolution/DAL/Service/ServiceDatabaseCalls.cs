@@ -12,6 +12,7 @@ using Microsoft.Practices.EnterpriseLibrary.Data.Sql;
 using Microsoft.Practices.EnterpriseLibrary.Common;
 
 
+
 namespace Advantage.ERP.DAL
 {
    public class ServiceDatabaseCalls : IServiceDatabaseCalls
@@ -276,6 +277,30 @@ namespace Advantage.ERP.DAL
             return (SqlDataReader)((RefCountingDataReader)idr).InnerReader;
         }
 
+        public DataSet gMsGetApplianceList(DAL.DataContract.Appliancemst objapp)
+        {
+            Database db = DatabaseFactory.CreateDatabase();
+            string sqlcmd = "S_GetApplianceList";
+            DbCommand dbc = db.GetStoredProcCommand(sqlcmd);
+            db.AddInParameter(dbc, "@OrgCode", DbType.String, objapp.pOrgCode);
+            db.AddInParameter(dbc, "@AppCode", DbType.String, objapp.pApplianceCode);
+            db.AddInParameter(dbc, "@AppName", DbType.String, objapp.pApplianceName);
+            DataSet myDataSet = null;
+            myDataSet = db.ExecuteDataSet(dbc);            
+            return myDataSet;           
+                     
+        }
+
+        public SqlDataReader gMsGetApplianceByAppCode(DAL.DataContract.Appliancemst objapp)
+        {
+            Database db = DatabaseFactory.CreateDatabase();
+            string sqlcom = "S_GetApplianceDetails";
+            DbCommand dbcommand = db.GetStoredProcCommand(sqlcom);
+            db.AddInParameter(dbcommand, "@OrgCode", DbType.String,objapp.pOrgCode);
+            db.AddInParameter(dbcommand, "@AppCode", DbType.String,objapp.pApplianceCode);
+            IDataReader idr = db.ExecuteReader(dbcommand);
+            return (SqlDataReader)((RefCountingDataReader)idr).InnerReader;
+        }
 
        #endregion ApplianceMaster
    }

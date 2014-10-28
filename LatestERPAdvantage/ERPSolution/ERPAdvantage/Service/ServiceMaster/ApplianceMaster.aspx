@@ -68,14 +68,14 @@
                     <asp:Label runat="server" Text ="Appliance Code" />
                 </td>
                 <td class="auto-style8">
-                    <asp:TextBox ID="txtappliancecode" runat="server" Width="284px"></asp:TextBox>
-                    <asp:Button ID="cmdgetlist" runat="server" Height="23px" Text="...." Width="26px" />
+                    <asp:TextBox ID="txtappliancecode" runat="server" Width="284px" OnTextChanged="txtappliancecode_TextChanged"></asp:TextBox>
+                    <asp:Button ID="cmdgetlist" runat="server" Height="23px" Text="...." Width="26px" OnClick="cmdgetlist_Click" />
 
                      
 
                 </td>
                 
-                  <asp:Panel ID="Appliancelist" runat="server" Height="200" Width="200" BackColor="Gray">
+                  <asp:Panel ID="Appliancelist" runat="server" Height="18px" Width="88px" BackColor="Gray">
                         <asp:Label ID="Popup" runat="server" Text="Select Appliance"></asp:Label>
                       <br/>
                       <asp:Label runat="server" Text="Appliance Code" BackColor="YellowGreen" ForeColor="Blue"/>
@@ -84,8 +84,7 @@
                       <asp:Label ID="Label5" runat="server" Text="Appliance Name"  BackColor="YellowGreen" ForeColor="Blue" />
                       <asp:TextBox runat="server" ID="txtsearchbyappname"  Text="%" />
                       <br/>                      
-                      <asp:GridView ID="GridVapplist" runat="server" AutoGenerateSelectButton="true" />
-                                            
+                      <asp:GridView ID="GridVapplist" runat="server" AutoGenerateSelectButton="true"  ShowHeader="true" />                                            
 
                       <asp:Button runat="server" ID ="cmdselectapp" Text="Select" />
                     </asp:Panel>
@@ -98,6 +97,8 @@
                  
                 </td>
                 <td class="auto-style8">
+                    
+                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
                     
                 </td>
             </tr>

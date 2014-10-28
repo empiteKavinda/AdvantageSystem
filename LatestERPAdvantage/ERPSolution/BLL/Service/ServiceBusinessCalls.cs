@@ -275,6 +275,27 @@ namespace Advantage.ERP.BLL
             return droplist;
         }
 
+        public DataSet gMsGetcategoryList(DAL.DataContract.Appliancemst objapp)
+        {
+            //Advantage.ERP.DAL.ServiceDatabaseCalls objsercall = new ServiceDatabaseCalls();
+            ServiceDatabaseCalls objsercall = new ServiceDatabaseCalls();
+            return null;
+        }
+
+        public DataSet gMsGetApplianceList(DAL.DataContract.Appliancemst objapp)
+        {
+            ServiceDatabaseCalls dbcall = new ServiceDatabaseCalls();
+            DataSet ds = dbcall.gMsGetApplianceList(objapp);            
+            return ds;
+        }
+
+        public SqlDataReader gMsGetApplianceByAppCode(DAL.DataContract.Appliancemst objmst)
+        {
+            ServiceDatabaseCalls objs = new ServiceDatabaseCalls();
+            SqlDataReader sdr = objs.gMsGetApplianceByAppCode(objmst);
+            return sdr;
+        }
+
         #endregion
     }
 }

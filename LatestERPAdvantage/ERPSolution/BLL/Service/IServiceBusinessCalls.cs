@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 
 
 namespace Advantage.ERP.BLL
@@ -16,7 +17,9 @@ namespace Advantage.ERP.BLL
         bool gMsCheckPassword(DAL.DataContract.UserSpecificData objuMst);
         List<TSEC_USR_OBJ> gMsCheckSpecifiedModulepermission(DAL.DataContract.UserSpecificData objuMst);
         List<gDropdownlist> gMsGetBranchData(DAL.DataContract.UserSpecificData objuMst);
-      //  List<gDropdownlist> PMsGetCustomerServiceCenter(string orgCode);
+        //List<gDropdownlist> PMsGetCustomerServiceCenter(string orgCode);
         List<gDropdownlist> pMsGetAppliancecategory(DAL.DataContract.Appliancemst objapp);
+        DataSet gMsGetApplianceList(DAL.DataContract.Appliancemst objapp);
+        SqlDataReader gMsGetApplianceByAppCode(DAL.DataContract.Appliancemst objapp);
     }
 }
