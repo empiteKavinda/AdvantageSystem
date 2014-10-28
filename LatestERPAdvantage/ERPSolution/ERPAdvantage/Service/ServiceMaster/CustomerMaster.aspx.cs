@@ -88,6 +88,7 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
        //  Page.Validate();
          UIvalidations uiv = new UIvalidations();
          UserSpecificData objumst = new UserSpecificData();
+         objumst.pObjId = 4;
          if (uiv.CheckModuleAccess(objumst))
          {
              gMsCreateCustDetails(objumst);
@@ -119,7 +120,7 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
          objMst.pCustName = txtFname.Text.Trim();
        }
 
-        objumst.pUserId = objuMod.pUserId;
+         objumst.pUserId = objuMod.pUserId;
          objumst.pBrnCode = objuMod.pBrnCode;
          objumst.pModType = objuMod.pModType;
          objumst.pObjId = objuMod.pObjId;

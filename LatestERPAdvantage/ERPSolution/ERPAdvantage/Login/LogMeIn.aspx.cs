@@ -18,8 +18,6 @@ namespace ERPAdvantage.Login
     {
         ADTWebService wsoj = new ADTWebService();
         UserSpecificData objuMst = new UserSpecificData();
-        
-
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -36,10 +34,9 @@ namespace ERPAdvantage.Login
             // Page page = (Page)HttpContext.Current.Handler;
             //DropDownList ddlBranch = ((DropDownList)this.LoginUser.FindControl("ddlBranch"));
             DropDownList ddlBranch = ((DropDownList)this.ddlBranch);
-
-             objuMst.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
-             List<gDropdownlist> drplist = wsoj.gMsGetBranchData(objuMst);
-             uicon.FillDropdownList(ddlBranch, drplist, "COM_ORG_NAME", "COM_ORG_CD");
+            objuMst.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
+            List<gDropdownlist> drplist = wsoj.gMsGetBranchData(objuMst);
+            uicon.FillDropdownList(ddlBranch, drplist, "COM_ORG_NAME", "COM_ORG_CD");
         }
 
         protected void ddlBranch_SelectedIndexChanged(object sender, EventArgs e)
@@ -64,8 +61,7 @@ namespace ERPAdvantage.Login
             // Write the user permission to access at least one module list back to session state.
             Session["UserPerModules"] = list;
             Session["UserobjuMst"] = objuMst;
-             
-
+        
             if (list.Count>=0)
             {
             if (success == true)

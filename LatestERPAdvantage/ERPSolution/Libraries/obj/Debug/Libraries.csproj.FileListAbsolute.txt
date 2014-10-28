@@ -7,3 +7,4 @@ G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\Libraries\b
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\Libraries\obj\Debug\Libraries.csprojResolveAssemblyReference.cache
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\Libraries\obj\Debug\Libraries.dll
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\Libraries\obj\Debug\Libraries.pdb
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\Libraries\obj\Debug\Libraries.csprojResolveAssemblyReference.cache

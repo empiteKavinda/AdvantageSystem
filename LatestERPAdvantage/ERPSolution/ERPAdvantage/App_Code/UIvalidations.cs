@@ -146,8 +146,7 @@ public class UIvalidations:Page
              }
              if (ctrl is HtmlTextArea)
                  ((HtmlTextArea)ctrl).Value = string.Empty;
-              
-                     
+                                   
             ClearInputs(ctrl.Controls);
         }
     }
@@ -213,12 +212,10 @@ public class UIvalidations:Page
         //If Not (Regex.IsMatch(textValue, "^[azAZ'.]{1,40}$")) Then
 
         if (!(Regex.IsMatch(textValue, "[a-zA-Z. ]+")))
-           
         {
             // lblIsname.Text = "Please insert a valied " & obj
             //TextBox.Focus()
             return true;
-
         }
         else
         {
@@ -265,7 +262,6 @@ public class UIvalidations:Page
         // When retrieving an object from session state, cast it to 
         // the appropriate type.
         TSEC_USR_OBJData objTs = new TSEC_USR_OBJData();
-        
         List<TSEC_USR_OBJ> userMlist = (List<TSEC_USR_OBJ>)Session["UserPerModules"];
         UserSpecificData useObj = (UserSpecificData)Session["UserobjuMst"];
        // list = (List<TSEC_USR_OBJ>)Session["UserPerModules"];
@@ -275,18 +271,35 @@ public class UIvalidations:Page
             objTs.pSUSR_OBJ_ID = userMlist[i].SUSR_OBJ_ID;
             objTs.pSUSR_ORG_CD = userMlist[i].SUSR_ORG_CD;
             objTs.pSUSR_USR_ID = userMlist[i].SUSR_USR_ID;
-            if ((Convert.ToString(userMlist[i].SUSR_MOD_ID) == ServiceMain.ModuleId) && (objTs.pSUSR_OBJ_ID == 4))
-            {
-                objumst.pModType = "Service";
-                objumst.pObjId = Convert.ToString(objTs.pSUSR_OBJ_ID);
+                  
+            switch (Convert.ToString(userMlist[i].SUSR_MOD_ID))
+           {
+              case ServiceMain.ModuleId:
+                 objumst.pModType = "SERVICE";
+                // objumst.pObjId = Convert.ToString(objTs.pSUSR_OBJ_ID);
+                 success = true;
+                 break;
+             case FinanceMain.ModuleId:
+                 objumst.pModType = "COSTING";
+                 objumst.pObjId = objTs.pSUSR_OBJ_ID;
+                 success = true;
+                 break;
+             case InventryMain.ModuleId:
+                 objumst.pModType = "STORE";
+                // objumst.pObjId = objTs.pSUSR_OBJ_ID;
+                 success = true;
+                 break;
+             case CostingMain.ModuleId:
+                 objumst.pModType = "ACCOUNTS";
+                //objumst.pObjId = objTs.pSUSR_OBJ_ID;
                 success = true;
                 break;
-            }
+           }
+           // break;
         }
         objumst.pUserId = useObj.pUserId;
         objumst.pBrnCode = useObj.pBrnCode;
-
         return success;
+       }
     }
-
-    }
+    
