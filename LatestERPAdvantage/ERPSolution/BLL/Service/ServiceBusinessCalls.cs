@@ -247,7 +247,7 @@ namespace Advantage.ERP.BLL
         #region Login.aspx definitions
         public List<gDropdownlist> gMsGetBranchData(UserSpecificData objuMst)
         {
-            IServiceDatabaseCalls obj = new Advantage.ERP.DAL.ServiceDatabaseCalls();
+            ServiceDatabaseCalls obj = new ServiceDatabaseCalls();
             List<gDropdownlist> drpdwlst = new List<gDropdownlist>();
 
             SqlDataReader dr = obj.gMsGetBranchData(objuMst);
@@ -260,6 +260,7 @@ namespace Advantage.ERP.BLL
         }
         #endregion
 
+<<<<<<< HEAD
         #region ApplianceMaster
         public List<gDropdownlist> pMsGetAppliancecategory(DAL.DataContract.Appliancemst objapp)
         {
@@ -275,5 +276,8 @@ namespace Advantage.ERP.BLL
         }
         
         #endregion
+=======
+        
+>>>>>>> d834fa163aa8287be10edb087b8060bebb75aa9a
     }
 }

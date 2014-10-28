@@ -17,7 +17,12 @@ namespace Advantage.ERP.DAL
         SqlDataReader gMsValidateUser(DAL.DataContract.UserSpecificData objuMst);
         SqlDataReader gMsCheckPassword(DAL.DataContract.UserSpecificData objuMst);
         SqlDataReader gMsCheckSpecifiedModulepermission(DAL.DataContract.UserSpecificData objuMst);
+<<<<<<< HEAD
         SqlDataReader PMsGetCustomerServiceCenter(string orgCode);
        // SqlDataReader gMsGetAppliancecategory(DAL.DataContract.Appliancemst objapp);
+=======
+       
+
+>>>>>>> d834fa163aa8287be10edb087b8060bebb75aa9a
     }
 }
