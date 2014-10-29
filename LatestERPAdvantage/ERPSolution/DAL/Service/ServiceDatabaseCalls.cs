@@ -302,6 +302,55 @@ namespace Advantage.ERP.DAL
             return (SqlDataReader)((RefCountingDataReader)idr).InnerReader;
         }
 
+        public bool gMsCreateAppliance(DAL.DataContract.Appliancemst objapp)
+        {
+            DAL.DataContract.UserSpecificData logdata = new DataContract.UserSpecificData();            
+            Database db = DatabaseFactory.CreateDatabase();
+            string sqlcmd = "S_InsertAppliance";
+            DbCommand dbcommand = db.GetStoredProcCommand(sqlcmd);
+            db.AddInParameter(dbcommand, "@orgcode", DbType.String, objapp.pOrgCode);
+            db.AddInParameter(dbcommand, "@AppCode", DbType.String, objapp.pApplianceCode);
+            db.AddInParameter(dbcommand, "@AppName", DbType.String, objapp.pApplianceName);
+            db.AddInParameter(dbcommand, "@Storage", DbType.Double, objapp.pStorageCost);
+            db.AddInParameter(dbcommand, "@Estimation", DbType.Double, objapp.pEstimateCost);
+            db.AddInParameter(dbcommand, "@AppCategory", DbType.String, objapp.pAppCategory);            
+            db.AddInParameter(dbcommand, "@Createdby", DbType.String, logdata.pUserId);
+            int x = db.ExecuteNonQuery(dbcommand);
+             if (x > 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public bool gMsUpdateAppliance(DAL.DataContract.Appliancemst objapp)
+        {
+            DAL.DataContract.UserSpecificData logdata = new DataContract.UserSpecificData();   
+            Database db = DatabaseFactory.CreateDatabase();
+            string sqlcommand = "UpdateAppliance";
+            DbCommand dbcom = db.GetStoredProcCommand(sqlcommand);
+            db.AddInParameter(dbcom, "@orgcode", DbType.String, objapp.pOrgCode);
+            db.AddInParameter(dbcom, "@AppCode", DbType.String, objapp.pApplianceCode);
+            db.AddInParameter(dbcom, "@AppName", DbType.String, objapp.pApplianceName);
+            db.AddInParameter(dbcom, "@Storage", DbType.String,Convert.ToDouble(objapp.pStorageCost));
+            db.AddInParameter(dbcom, "@Estimation", DbType.String, Convert.ToDouble(objapp.pEstimateCost));
+            db.AddInParameter(dbcom, "@AppCategory", DbType.String,objapp.pAppCategory);
+            db.AddInParameter(dbcom, "@UpdatedBy", DbType.String, logdata.pUserId);
+            int x= db.ExecuteNonQuery(dbcom);
+            if (x >= 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
        #endregion ApplianceMaster
    }
 }

@@ -143,6 +143,23 @@ public List<gDropdownlist> pMsGetAppliancecategory(Advantage.ERP.DAL.DataContrac
         
     }
 
+    [WebMethod]
+    public void CreateAppliance(Advantage.ERP.DAL.DataContract.Appliancemst objapp)
+    {
+        ServiceBusinessCalls objnewapp = new ServiceBusinessCalls();
+        objnewapp.gMsCreateAppliance(objapp);
+    }
+
+    [WebMethod]
+
+    public void UpdateAppliance(Advantage.ERP.DAL.DataContract.Appliancemst objapp)
+    {
+        ServiceBusinessCalls objeditapp = new ServiceBusinessCalls();
+        objeditapp.gMsUpdateAppliance(objapp);
+
+    }
+
+
     #endregion
 
       

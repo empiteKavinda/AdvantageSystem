@@ -1,5 +1,4 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ApplianceMaster.aspx.cs" Inherits="ERPAdvantage.Service.ServiceMaster.ApplianceMaster" %>
-
 <%@ Register Assembly="AjaxControlToolkit" Namespace="AjaxControlToolkit" TagPrefix="asp" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
     <style type="text/css">
@@ -51,6 +50,7 @@
     <asp:ToolkitScriptManager ID="ToolkitScriptManager1" runat="server"></asp:ToolkitScriptManager>
 
         <asp:Panel runat="server" ID ="Appliancepanel">
+            <asp:Label ID="lblstatus" runat="server" Text="Label"></asp:Label>
             <br />
             <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.9em" PathSeparator=" : ">
                 <CurrentNodeStyle ForeColor="#333333" />
@@ -58,6 +58,11 @@
                 <PathSeparatorStyle Font-Bold="True" ForeColor="#990000" />
                 <RootNodeStyle Font-Bold="True" ForeColor="#FF8000" />
             </asp:SiteMapPath>
+
+            <div id="formValidation">
+           
+                </div>
+
         <table class="auto-style1">
             <tr>
                 <td class="auto-style3"></td>
@@ -68,9 +73,11 @@
                     <asp:Label runat="server" Text ="Appliance Code" />
                 </td>
                 <td class="auto-style8">
-                    <asp:TextBox ID="txtappliancecode" runat="server" Width="284px" OnTextChanged="txtappliancecode_TextChanged"></asp:TextBox>
+                    <asp:TextBox ID="txtappliancecode" runat="server" Width="284px" OnTextChanged="txtappliancecode_TextChanged" AutoPostBack="True"></asp:TextBox>
                     <asp:Button ID="cmdgetlist" runat="server" Height="23px" Text="...." Width="26px" OnClick="cmdgetlist_Click" />
 
+                     <asp:RequiredFieldValidator ID="rfvappcode" runat="server" ErrorMessage="Invalid Appliance" ForeColor="Red" ControlToValidate="txtappliancecode">
+            </asp:RequiredFieldValidator>
                      
 
                 </td>
@@ -98,9 +105,7 @@
                 </td>
                 <td class="auto-style8">
                     
-                    <asp:Button ID="Button1" runat="server" OnClick="Button1_Click" Text="Button" />
-                    
-                </td>
+                    &nbsp;</td>
             </tr>
             <tr>
                 <td class="auto-style7">
@@ -108,7 +113,11 @@
                 </td>
                 <td class="auto-style8">
                     <asp:TextBox ID="txtappliancedesc" runat="server" Width="284px"></asp:TextBox>
+                            <asp:RequiredFieldValidator ID="fvappdesc" runat="server" ErrorMessage="Invalid Description" ForeColor="Red" ControlToValidate="txtappliancedesc">
+            </asp:RequiredFieldValidator>
                 </td>
+             
+                     
             </tr>
             <tr>
                 <td class="auto-style3">
@@ -128,17 +137,24 @@
             </tr>
             <tr>
                 <td class="auto-style2">
-                    <asp:Label ID="Label3" runat="server" Text="Category"></asp:Label>
+                    <br />
                 </td>
                 <td class="auto-style5">
-                    <asp:DropDownList ID="cboappcategory" runat="server" Height="16px" Width="290px">
+                   <asp:UpdatePanel ID="uplplddlPre" runat="server">
+                 <ContentTemplate>
+                    <asp:DropDownList ID="ddlappcategory" runat="server" AutoPostBack="true" Height="16px" Width="290px">
                     </asp:DropDownList>
+                 <asp:RequiredFieldValidator ID="rfvapptype" runat="server" ErrorMessage="Invalid Appliance Type" ForeColor="Red" ControlToValidate="ddlappcategory">
+            </asp:RequiredFieldValidator>
+                     </ContentTemplate>
+                       </asp:UpdatePanel>
                 </td>
             </tr>
             <tr>
                 <td class="auto-style2">&nbsp;</td>
                 <td class="auto-style5">
-                    <asp:Button ID="cmdsave" runat="server" Height="26px" Text="Save" Width="101px" />
+                    <asp:Button ID="cmdsave" runat="server" Height="26px" Text="Save" Width="101px" OnClick="cmdsave_Click" />
+                    &nbsp;<asp:Button ID="Button1" runat="server" Height="25px" OnClick="Button1_Click" Text="Update" Width="99px" />
                 </td>
             </tr>
         </table>

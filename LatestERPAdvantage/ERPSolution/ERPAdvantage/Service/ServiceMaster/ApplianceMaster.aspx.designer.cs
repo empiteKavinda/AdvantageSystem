@@ -40,6 +40,15 @@ namespace ERPAdvantage.Service.ServiceMaster {
         protected global::System.Web.UI.WebControls.Panel Appliancepanel;
         
         /// <summary>
+        /// lblstatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblstatus;
+        
+        /// <summary>
         /// SiteMapPath1 control.
         /// </summary>
         /// <remarks>
@@ -65,6 +74,15 @@ namespace ERPAdvantage.Service.ServiceMaster {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button cmdgetlist;
+        
+        /// <summary>
+        /// rfvappcode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvappcode;
         
         /// <summary>
         /// Appliancelist control.
@@ -139,15 +157,6 @@ namespace ERPAdvantage.Service.ServiceMaster {
         protected global::AjaxControlToolkit.ModalPopupExtender Panel1_ModalPopupExtender;
         
         /// <summary>
-        /// Button1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
-        
-        /// <summary>
         /// txtappliancedesc control.
         /// </summary>
         /// <remarks>
@@ -155,6 +164,15 @@ namespace ERPAdvantage.Service.ServiceMaster {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtappliancedesc;
+        
+        /// <summary>
+        /// fvappdesc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator fvappdesc;
         
         /// <summary>
         /// Label1 control.
@@ -193,22 +211,31 @@ namespace ERPAdvantage.Service.ServiceMaster {
         protected global::System.Web.UI.WebControls.TextBox txtestimationcost;
         
         /// <summary>
-        /// Label3 control.
+        /// uplplddlPre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
+        protected global::System.Web.UI.UpdatePanel uplplddlPre;
         
         /// <summary>
-        /// cboappcategory control.
+        /// ddlappcategory control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList cboappcategory;
+        protected global::System.Web.UI.WebControls.DropDownList ddlappcategory;
+        
+        /// <summary>
+        /// rfvapptype control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvapptype;
         
         /// <summary>
         /// cmdsave control.
@@ -218,5 +245,14 @@ namespace ERPAdvantage.Service.ServiceMaster {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button cmdsave;
+        
+        /// <summary>
+        /// Button1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button1;
     }
 }

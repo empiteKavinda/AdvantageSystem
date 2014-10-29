@@ -15,6 +15,8 @@ namespace ERPAdvantage.Service.ServiceMaster
 {
     public partial class ApplianceMaster : System.Web.UI.Page
     {
+        
+
 
         private void GetAppliancecategory()
         {
@@ -24,7 +26,7 @@ namespace ERPAdvantage.Service.ServiceMaster
             objapp.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
             objapp.pAppCategory = ERPSystemData.COM_DOM_TYPE.APPLIANCE_CATEGORY.ToString();
             List<gDropdownlist> droplist = wser.pMsGetAppliancecategory(objapp);
-            uic.FillDropdownList(cboappcategory, droplist, "COM_DOM_CODE", "COM_DOM_DESC");
+            uic.FillDropdownList(ddlappcategory, droplist, "COM_DOM_CODE", "COM_DOM_DESC");
         
         }
 
@@ -55,14 +57,49 @@ namespace ERPAdvantage.Service.ServiceMaster
                 txtappliancedesc.Text = mydata[1].ToString();
                 txtstoragecost.Text = mydata[2].ToString();
                 txtestimationcost.Text = mydata[3].ToString();
-                cboappcategory.SelectedValue = mydata[4].ToString();
+                ddlappcategory.SelectedValue = mydata[4].ToString();
             }
         }
 
+        private bool CreateAppliance()
+        {
+            UIControl uic = new UIControl();
+            ADTWebService wser = new ADTWebService();
+            Appliancemst objapp = new Appliancemst();
+            objapp.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
+            objapp.pApplianceCode = txtappliancecode.Text.ToString();
+            objapp.pApplianceName = txtappliancedesc.Text.ToString();
+            objapp.pStorageCost = Convert.ToDouble(txtstoragecost.Text.Trim());
+            objapp.pEstimateCost =Convert.ToDouble(txtestimationcost.Text.Trim());
+            objapp.pAppCategory = ddlappcategory.SelectedItem.Text;
+            wser.CreateAppliance(objapp);
+            return true;
+        }
+
+        private bool UpdateAppliance()
+        {
+            UIControl uic = new UIControl();
+            ADTWebService wser = new ADTWebService();
+            Appliancemst objapp = new Appliancemst();
+            objapp.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
+            objapp.pApplianceCode = txtappliancecode.Text;
+            objapp.pApplianceName = txtappliancedesc.Text;
+            objapp.pStorageCost =Convert.ToDouble(txtstoragecost.Text);
+            objapp.pEstimateCost = Convert.ToDouble(txtestimationcost.Text);
+            objapp.pAppCategory = ddlappcategory.SelectedItem.Text;
+            wser.UpdateAppliance(objapp);
+            return true;
+        }
+
+
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            GetAppliancecategory();
-            GetAppliance();            
+            if (!IsPostBack)
+            {
+                GetAppliancecategory();
+                GetAppliance();
+            }
         }
 
         protected void cmdgetlist_Click(object sender, EventArgs e)
@@ -78,12 +115,33 @@ namespace ERPAdvantage.Service.ServiceMaster
 
         protected void txtappliancecode_TextChanged(object sender, EventArgs e)
         {
-          
+            GetApplianceDetails();
+        }
+
+      
+
+        protected void cmdsave_Click(object sender, EventArgs e)
+        {
+            if (CreateAppliance() == true)
+            {
+                lblstatus.Text = Resources.UIMessege.msgSaveOk;
+            }
+            else
+            {
+                lblstatus.Text = Resources.UIMessege.msgSaveError;
+            }
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            GetApplianceDetails();
+            if (UpdateAppliance() == true)
+            {
+                lblstatus.Text = Resources.UIMessege.msgSaveOk;
+            }
+            else
+            {
+                lblstatus.Text = Resources.UIMessege.msgSaveError;
+            }
         }
 
         

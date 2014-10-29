@@ -21,7 +21,7 @@ namespace Advantage.ERP.DAL
         SqlDataReader gMsGetAppliancecategory(DAL.DataContract.Appliancemst objapp);
         DataSet gMsGetApplianceList(DAL.DataContract.Appliancemst objapp);
         SqlDataReader gMsGetApplianceByAppCode(DAL.DataContract.Appliancemst objapp);
-
-
+        bool gMsCreateAppliance(DAL.DataContract.Appliancemst objapp);
+        bool gMsUpdateAppliance(DAL.DataContract.Appliancemst objapp);
     }
 }

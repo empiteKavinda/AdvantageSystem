@@ -296,6 +296,20 @@ namespace Advantage.ERP.BLL
             return sdr;
         }
 
+        public void  gMsCreateAppliance(DAL.DataContract.Appliancemst objapp)
+        {
+            ServiceDatabaseCalls obj = new ServiceDatabaseCalls();
+            obj.gMsCreateAppliance(objapp);
+                        
+        }
+
+        public void gMsUpdateAppliance(DAL.DataContract.Appliancemst objapp)
+        {
+            ServiceDatabaseCalls obj = new ServiceDatabaseCalls();
+            obj.gMsUpdateAppliance(objapp);
+        }
+
+
         #endregion
     }
 }

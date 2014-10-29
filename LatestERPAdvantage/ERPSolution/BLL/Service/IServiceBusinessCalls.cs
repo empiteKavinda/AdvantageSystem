@@ -21,5 +21,8 @@ namespace Advantage.ERP.BLL
         List<gDropdownlist> pMsGetAppliancecategory(DAL.DataContract.Appliancemst objapp);
         DataSet gMsGetApplianceList(DAL.DataContract.Appliancemst objapp);
         SqlDataReader gMsGetApplianceByAppCode(DAL.DataContract.Appliancemst objapp);
+        void gMsCreateAppliance(DAL.DataContract.Appliancemst objapp);
+        void gMsUpdateAppliance(DAL.DataContract.Appliancemst objapp);
+
     }
 }

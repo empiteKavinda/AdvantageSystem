@@ -12,8 +12,8 @@ namespace Advantage.ERP.DAL.DataContract
        public string pOrgCode { get; set; }
        public string pApplianceCode {get; set;}
        public string pApplianceName {get; set;}
-       public string pStorageCost { get; set; }
-       public string pEstimateCost { get; set; }
+       public double pStorageCost { get; set; }
+       public double pEstimateCost { get; set; }
        public string pAppCategory { get; set; }
 
     }
