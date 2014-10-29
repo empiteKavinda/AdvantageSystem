@@ -28,10 +28,10 @@ public class ERPSystemData
     }
     public enum gModuleName
     {
-        Service,
-        Finance,
-        Inventory,
-        Costing
+        SERVICE,
+        COSTING,
+        STORE,
+        ACCOUNTS
 
     }
     public enum Status

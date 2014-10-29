@@ -259,6 +259,7 @@ public class UIvalidations:Page
     public bool CheckModuleAccess(Advantage.ERP.DAL.DataContract.UserSpecificData objumst)
     {
         bool success = false;
+        string sTempModuleType=null;
         // When retrieving an object from session state, cast it to 
         // the appropriate type.
         TSEC_USR_OBJData objTs = new TSEC_USR_OBJData();
@@ -271,35 +272,44 @@ public class UIvalidations:Page
             objTs.pSUSR_OBJ_ID = userMlist[i].SUSR_OBJ_ID;
             objTs.pSUSR_ORG_CD = userMlist[i].SUSR_ORG_CD;
             objTs.pSUSR_USR_ID = userMlist[i].SUSR_USR_ID;
-                  
-            switch (Convert.ToString(userMlist[i].SUSR_MOD_ID))
-           {
-              case ServiceMain.ModuleId:
-                 objumst.pModType = "SERVICE";
-                // objumst.pObjId = Convert.ToString(objTs.pSUSR_OBJ_ID);
-                 success = true;
-                 break;
-             case FinanceMain.ModuleId:
-                 objumst.pModType = "COSTING";
-                 objumst.pObjId = objTs.pSUSR_OBJ_ID;
-                 success = true;
-                 break;
-             case InventryMain.ModuleId:
-                 objumst.pModType = "STORE";
-                // objumst.pObjId = objTs.pSUSR_OBJ_ID;
-                 success = true;
-                 break;
-             case CostingMain.ModuleId:
-                 objumst.pModType = "ACCOUNTS";
-                //objumst.pObjId = objTs.pSUSR_OBJ_ID;
-                success = true;
-                break;
-           }
+            if (Convert.ToString(objTs.pSUSR_MOD_ID) == objumst.pModType)
+            {
+                switch (Convert.ToString(userMlist[i].SUSR_MOD_ID))
+                {
+                    case ServiceMain.ModuleId:
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
+                     success = true;
+                     sTempModuleType = ERPSystemData.gModuleName.SERVICE.ToString();
+                     break;
+                    case FinanceMain.ModuleId:
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
+                     success = true;
+                     sTempModuleType = ERPSystemData.gModuleName.ACCOUNTS.ToString();
+                     break;
+                    case InventryMain.ModuleId:
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
+                     success = true;
+                     sTempModuleType = ERPSystemData.gModuleName.STORE.ToString();
+                     break;
+                    case CostingMain.ModuleId:
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
+                     success = true;
+                     sTempModuleType = ERPSystemData.gModuleName.COSTING.ToString();
+                     break;
+                }
+            }
            // break;
+            if (success) // check if inner loop set break
+            {
+                objumst.pModType = sTempModuleType;
+                objumst.pUserId = useObj.pUserId;
+                objumst.pBrnCode = useObj.pBrnCode;
+                objumst.pObjId = objTs.pSUSR_OBJ_ID;
+                break; // break outer loop
+            }
+
         }
-        objumst.pUserId = useObj.pUserId;
-        objumst.pBrnCode = useObj.pBrnCode;
-        return success;
+       return success;
        }
     }
     
