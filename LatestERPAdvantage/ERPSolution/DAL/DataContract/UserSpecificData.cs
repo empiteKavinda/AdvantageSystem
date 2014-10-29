@@ -8,7 +8,7 @@ namespace Advantage.ERP.DAL.DataContract
    public class UserSpecificData
     {
         public string pUserId { get; set; }
-        public string pObjId { get; set; }
+        public int pObjId { get; set; }
         public string pOrgCode { get; set; }
         public string pBrnCode { get; set; }
         public string pModType { get; set; }

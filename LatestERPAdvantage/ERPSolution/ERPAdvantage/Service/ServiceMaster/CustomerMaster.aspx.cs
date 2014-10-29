@@ -94,6 +94,7 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
        //  Page.Validate();
          UIvalidations uiv = new UIvalidations();
          UserSpecificData objumst = new UserSpecificData();
+         objumst.pObjId = 4;
          if (uiv.CheckModuleAccess(objumst))
          {
              gMsCreateCustDetails(objumst);
@@ -125,7 +126,7 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
          objMst.pCustName = txtFname.Text.Trim();
        }
 
-        objumst.pUserId = objuMod.pUserId;
+         objumst.pUserId = objuMod.pUserId;
          objumst.pBrnCode = objuMod.pBrnCode;
          objumst.pModType = objuMod.pModType;
          objumst.pObjId = objuMod.pObjId;
@@ -274,7 +275,9 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
         UserSpecificData objumst = new UserSpecificData();
         UserSpecificData objuMod = new UserSpecificData();
         UIvalidations uiv = new UIvalidations();
-                
+        objuMod.pObjId = 4;
+        objuMod.pModType = ServiceMain.ModuleId; 
+
         if (uiv.CheckModuleAccess(objuMod))
         {
             objumst.pUserId = objuMod.pUserId;
@@ -295,7 +298,6 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
                     {
                         //objMst.pCustPrefix = objMst.pCustPrefix.Substring(0, 1).ToUpper() + objMst.pCustPrefix.Substring(1).ToLower();
                         ddlPrefix.SelectedValue = objMst.pCustPrefix;
-
                     }
                     else
                     {

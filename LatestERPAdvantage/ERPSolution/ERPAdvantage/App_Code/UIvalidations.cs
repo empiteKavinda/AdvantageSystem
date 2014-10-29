@@ -146,8 +146,7 @@ public class UIvalidations:Page
              }
              if (ctrl is HtmlTextArea)
                  ((HtmlTextArea)ctrl).Value = string.Empty;
-              
-                     
+                                   
             ClearInputs(ctrl.Controls);
         }
     }
@@ -213,12 +212,10 @@ public class UIvalidations:Page
         //If Not (Regex.IsMatch(textValue, "^[azAZ'.]{1,40}$")) Then
 
         if (!(Regex.IsMatch(textValue, "[a-zA-Z. ]+")))
-           
         {
             // lblIsname.Text = "Please insert a valied " & obj
             //TextBox.Focus()
             return true;
-
         }
         else
         {
@@ -262,10 +259,10 @@ public class UIvalidations:Page
     public bool CheckModuleAccess(Advantage.ERP.DAL.DataContract.UserSpecificData objumst)
     {
         bool success = false;
+        string sTempModuleType=null;
         // When retrieving an object from session state, cast it to 
         // the appropriate type.
         TSEC_USR_OBJData objTs = new TSEC_USR_OBJData();
-        
         List<TSEC_USR_OBJ> userMlist = (List<TSEC_USR_OBJ>)Session["UserPerModules"];
         UserSpecificData useObj = (UserSpecificData)Session["UserobjuMst"];
        // list = (List<TSEC_USR_OBJ>)Session["UserPerModules"];
@@ -275,18 +272,44 @@ public class UIvalidations:Page
             objTs.pSUSR_OBJ_ID = userMlist[i].SUSR_OBJ_ID;
             objTs.pSUSR_ORG_CD = userMlist[i].SUSR_ORG_CD;
             objTs.pSUSR_USR_ID = userMlist[i].SUSR_USR_ID;
-            if ((Convert.ToString(userMlist[i].SUSR_MOD_ID) == ServiceMain.ModuleId) && (objTs.pSUSR_OBJ_ID == 4))
+            if (Convert.ToString(objTs.pSUSR_MOD_ID) == objumst.pModType)
             {
-                objumst.pModType = "Service";
-                objumst.pObjId = Convert.ToString(objTs.pSUSR_OBJ_ID);
-                success = true;
-                break;
+                switch (Convert.ToString(userMlist[i].SUSR_MOD_ID))
+                {
+                    case ServiceMain.ModuleId:
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
+                     success = true;
+                     sTempModuleType = ERPSystemData.gModuleName.SERVICE.ToString();
+                     break;
+                    case FinanceMain.ModuleId:
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
+                     success = true;
+                     sTempModuleType = ERPSystemData.gModuleName.ACCOUNTS.ToString();
+                     break;
+                    case InventryMain.ModuleId:
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
+                     success = true;
+                     sTempModuleType = ERPSystemData.gModuleName.STORE.ToString();
+                     break;
+                    case CostingMain.ModuleId:
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
+                     success = true;
+                     sTempModuleType = ERPSystemData.gModuleName.COSTING.ToString();
+                     break;
+                }
             }
+           // break;
+            if (success) // check if inner loop set break
+            {
+                objumst.pModType = sTempModuleType;
+                objumst.pUserId = useObj.pUserId;
+                objumst.pBrnCode = useObj.pBrnCode;
+                objumst.pObjId = objTs.pSUSR_OBJ_ID;
+                break; // break outer loop
+            }
+
         }
-        objumst.pUserId = useObj.pUserId;
-        objumst.pBrnCode = useObj.pBrnCode;
-
-        return success;
+       return success;
+       }
     }
-
-    }
+    
