@@ -19,9 +19,6 @@
 
      <asp:Panel runat="server" ID="LoginPanel" Height="350px">
 
-       
-       
-
                 <table class="auto-style1">
                     <tr>
                         <td class="auto-style2">&nbsp;</td>

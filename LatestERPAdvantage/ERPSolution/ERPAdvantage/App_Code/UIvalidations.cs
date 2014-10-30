@@ -228,8 +228,6 @@ public class UIvalidations:Page
         //If Not (Regex.IsMatch(textValue, "^[azAZ'.]{1,40}$")) Then
 
         if (!(Regex.IsMatch(textValue, "(\\(\\d{3}\\)|\\d{3}-)?\\d{8}")))
-         
-
         {
             // lblIsname.Text = "Please insert a valied " & obj
             //TextBox.Focus()
@@ -254,8 +252,7 @@ public class UIvalidations:Page
         }
         return str.ToString(); 
     }
-
-
+    
     public bool CheckModuleAccess(Advantage.ERP.DAL.DataContract.UserSpecificData objumst)
     {
         bool success = false;
@@ -277,22 +274,22 @@ public class UIvalidations:Page
                 switch (Convert.ToString(userMlist[i].SUSR_MOD_ID))
                 {
                     case ServiceMain.ModuleId:
-                     if (objTs.pSUSR_OBJ_ID.ToString() == objumst.pObjId.ToString())
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
                      success = true;
                      sTempModuleType = ERPSystemData.gModuleName.SERVICE.ToString();
                      break;
                     case FinanceMain.ModuleId:
-                     if (objTs.pSUSR_OBJ_ID.ToString() == objumst.pObjId.ToString())
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
                      success = true;
                      sTempModuleType = ERPSystemData.gModuleName.ACCOUNTS.ToString();
                      break;
                     case InventryMain.ModuleId:
-                     if (objTs.pSUSR_OBJ_ID.ToString() == objumst.pObjId.ToString())
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
                      success = true;
                      sTempModuleType = ERPSystemData.gModuleName.STORE.ToString();
                      break;
                     case CostingMain.ModuleId:
-                     if (objTs.pSUSR_OBJ_ID.ToString() == objumst.pObjId.ToString())
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
                      success = true;
                      sTempModuleType = ERPSystemData.gModuleName.COSTING.ToString();
                      break;
@@ -304,7 +301,7 @@ public class UIvalidations:Page
                 objumst.pModType = sTempModuleType;
                 objumst.pUserId = useObj.pUserId;
                 objumst.pBrnCode = useObj.pBrnCode;
-                objumst.pObjId = objTs.pSUSR_OBJ_ID.ToString();
+                objumst.pObjId = objTs.pSUSR_OBJ_ID;
                 break; // break outer loop
             }
 
