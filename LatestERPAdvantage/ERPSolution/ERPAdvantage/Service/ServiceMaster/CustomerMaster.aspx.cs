@@ -94,7 +94,7 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
        //  Page.Validate();
          UIvalidations uiv = new UIvalidations();
          UserSpecificData objumst = new UserSpecificData();
-         objumst.pObjId = 4;
+         objumst.pObjId = "4";
          if (uiv.CheckModuleAccess(objumst))
          {
              gMsCreateCustDetails(objumst);
@@ -275,7 +275,7 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
         UserSpecificData objumst = new UserSpecificData();
         UserSpecificData objuMod = new UserSpecificData();
         UIvalidations uiv = new UIvalidations();
-        objuMod.pObjId = 4;
+        objuMod.pObjId = "4";
         objuMod.pModType = ServiceMain.ModuleId; 
 
         if (uiv.CheckModuleAccess(objuMod))
