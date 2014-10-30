@@ -161,7 +161,25 @@ public List<gDropdownlist> pMsGetAppliancecategory(Advantage.ERP.DAL.DataContrac
 
 
     #endregion
+    
+    #region DomainMaster
+    [WebMethod]
+    public DataSet gMsGetDomainTypes(Advantage.ERP.DAL.DataContract.Domainmst objdomain)
+    {
+        ServiceBusinessCalls obj = new ServiceBusinessCalls();
+        return obj.gMsGetDomainTypes(objdomain);
+    }
 
-      
+    [WebMethod]
+    public DataSet gMsGetDomainDetails(Advantage.ERP.DAL.DataContract.Domainmst objdomain)
+    {
+        ServiceBusinessCalls obj = new ServiceBusinessCalls();
+        return obj.gMsGetDomainDetails(objdomain);
+    }
+
+
+    #endregion DomainMaster
+
+
 }
 

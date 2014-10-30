@@ -87,6 +87,7 @@
     <Content Include="Service\ServiceMaster\ApplianceMaster.aspx" />
     <Content Include="Service\ServiceMaster\AreaMaster.aspx" />
     <Content Include="Service\ServiceMaster\CustomerMaster.aspx" />
+    <Content Include="Service\ServiceMaster\DomainMaster.aspx" />
     <Content Include="Styles\generic.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -213,6 +214,13 @@
       <DependentUpon>CustomerMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\ServiceMaster\DomainMaster.aspx.cs">
+      <DependentUpon>DomainMaster.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\ServiceMaster\DomainMaster.aspx.designer.cs">
+      <DependentUpon>DomainMaster.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

@@ -23,5 +23,7 @@ namespace Advantage.ERP.DAL
         SqlDataReader gMsGetApplianceByAppCode(DAL.DataContract.Appliancemst objapp);
         bool gMsCreateAppliance(DAL.DataContract.Appliancemst objapp);
         bool gMsUpdateAppliance(DAL.DataContract.Appliancemst objapp);
+        DataSet gMsGetDomainTypes(DAL.DataContract.Domainmst objdomain);
+        DataSet gMsGetDomainDetails(DAL.DataContract.Domainmst objdomain);
     }
 }

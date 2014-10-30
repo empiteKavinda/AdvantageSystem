@@ -74,6 +74,7 @@
   <ItemGroup>
     <Compile Include="DataContract\Service\Appliancemst.cs" />
     <Compile Include="DataContract\Service\CustomMaster.cs" />
+    <Compile Include="DataContract\Service\Domainmst.cs" />
     <Compile Include="DataContract\TSEC_USR_OBJData.cs" />
     <Compile Include="DataContract\UserSpecificData.cs" />
     <Compile Include="Service\IServiceDatabaseCalls.cs" />
