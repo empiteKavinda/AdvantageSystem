@@ -277,26 +277,22 @@ public class UIvalidations:Page
                 switch (Convert.ToString(userMlist[i].SUSR_MOD_ID))
                 {
                     case ServiceMain.ModuleId:
-<<<<<<< HEAD
-                        if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
-=======
-                     if (objTs.pSUSR_OBJ_ID.ToString() == objumst.pObjId.ToString())
->>>>>>> 34cc1b376b2ba0626777cd2baa3db353b972cc7d
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
                      success = true;
                      sTempModuleType = ERPSystemData.gModuleName.SERVICE.ToString();
                      break;
                     case FinanceMain.ModuleId:
-                     if (objTs.pSUSR_OBJ_ID.ToString() == objumst.pObjId.ToString())
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
                      success = true;
                      sTempModuleType = ERPSystemData.gModuleName.ACCOUNTS.ToString();
                      break;
                     case InventryMain.ModuleId:
-                     if (objTs.pSUSR_OBJ_ID.ToString() == objumst.pObjId.ToString())
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
                      success = true;
                      sTempModuleType = ERPSystemData.gModuleName.STORE.ToString();
                      break;
                     case CostingMain.ModuleId:
-                     if (objTs.pSUSR_OBJ_ID.ToString() == objumst.pObjId.ToString())
+                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
                      success = true;
                      sTempModuleType = ERPSystemData.gModuleName.COSTING.ToString();
                      break;
@@ -308,7 +304,7 @@ public class UIvalidations:Page
                 objumst.pModType = sTempModuleType;
                 objumst.pUserId = useObj.pUserId;
                 objumst.pBrnCode = useObj.pBrnCode;
-                objumst.pObjId = objTs.pSUSR_OBJ_ID.ToString();
+                objumst.pObjId = objTs.pSUSR_OBJ_ID;
                 break; // break outer loop
             }
 
