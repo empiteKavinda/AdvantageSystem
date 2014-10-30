@@ -59,8 +59,22 @@
                 <RootNodeStyle Font-Bold="True" ForeColor="#FF8000" />
             </asp:SiteMapPath>
 
-            <div id="formValidation">
+            <div id="formValidation" style="height:50px">
            
+                <asp:Panel ID="Appliancelist" runat="server" Height="18px" Width="88px" BackColor="Gray">
+                        <asp:Label ID="Popup" runat="server" Text="Select Appliance"></asp:Label>
+                      <br/>
+                      <asp:Label ID="Label3" runat="server" Text="Appliance Code" BackColor="YellowGreen" ForeColor="Blue"/>
+                      <asp:TextBox runat="server" ID="txtsearchbyappcode"  Text="%" />
+                      <br />
+                      <asp:Label ID="Label5" runat="server" Text="Appliance Name"  BackColor="YellowGreen" ForeColor="Blue" />
+                      <asp:TextBox runat="server" ID="txtsearchbyappname"  Text="%" />
+                      <br/>                      
+                      <asp:GridView ID="GridVapplist" runat="server" AutoGenerateSelectButton="true"  ShowHeader="true" />                                            
+
+                      <asp:Button runat="server" ID ="cmdselectapp" Text="Select" />
+                    </asp:Panel>
+
                 </div>
 
         <table class="auto-style1">
@@ -80,25 +94,10 @@
             </asp:RequiredFieldValidator>
                      
 
-                </td>
-                
-                  <asp:Panel ID="Appliancelist" runat="server" Height="18px" Width="88px" BackColor="Gray">
-                        <asp:Label ID="Popup" runat="server" Text="Select Appliance"></asp:Label>
-                      <br/>
-                      <asp:Label runat="server" Text="Appliance Code" BackColor="YellowGreen" ForeColor="Blue"/>
-                      <asp:TextBox runat="server" ID="txtsearchbyappcode"  Text="%" />
-                      <br />
-                      <asp:Label ID="Label5" runat="server" Text="Appliance Name"  BackColor="YellowGreen" ForeColor="Blue" />
-                      <asp:TextBox runat="server" ID="txtsearchbyappname"  Text="%" />
-                      <br/>                      
-                      <asp:GridView ID="GridVapplist" runat="server" AutoGenerateSelectButton="true"  ShowHeader="true" />                                            
+                </td>                                                 
+                    
+            </tr>                       
 
-                      <asp:Button runat="server" ID ="cmdselectapp" Text="Select" />
-                    </asp:Panel>
-
-                    <asp:ModalPopupExtender  ID="Panel1_ModalPopupExtender"  PopupControlID="Appliancelist" runat="server"  Enabled="True" TargetControlID="cmdgetlist" OkControlID="cmdselectapp" BackgroundCssClass="popupcontrol">
-                    </asp:ModalPopupExtender>
-            </tr>
             <tr>
                 <td class="auto-style7">
                  

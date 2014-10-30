@@ -58,33 +58,6 @@ namespace ERPAdvantage.Service.ServiceMaster {
         protected global::System.Web.UI.WebControls.SiteMapPath SiteMapPath1;
         
         /// <summary>
-        /// txtappliancecode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtappliancecode;
-        
-        /// <summary>
-        /// cmdgetlist control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdgetlist;
-        
-        /// <summary>
-        /// rfvappcode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvappcode;
-        
-        /// <summary>
         /// Appliancelist control.
         /// </summary>
         /// <remarks>
@@ -101,6 +74,15 @@ namespace ERPAdvantage.Service.ServiceMaster {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Popup;
+        
+        /// <summary>
+        /// Label3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label3;
         
         /// <summary>
         /// txtsearchbyappcode control.
@@ -148,13 +130,31 @@ namespace ERPAdvantage.Service.ServiceMaster {
         protected global::System.Web.UI.WebControls.Button cmdselectapp;
         
         /// <summary>
-        /// Panel1_ModalPopupExtender control.
+        /// txtappliancecode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::AjaxControlToolkit.ModalPopupExtender Panel1_ModalPopupExtender;
+        protected global::System.Web.UI.WebControls.TextBox txtappliancecode;
+        
+        /// <summary>
+        /// cmdgetlist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cmdgetlist;
+        
+        /// <summary>
+        /// rfvappcode control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvappcode;
         
         /// <summary>
         /// txtappliancedesc control.

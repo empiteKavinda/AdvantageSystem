@@ -39,8 +39,8 @@ namespace ERPAdvantage.Service.ServiceMaster
             app.pApplianceCode = txtappliancecode.Text.Trim();
             app.pApplianceName = txtappliancedesc.Text.Trim();
             DataSet ds = wser.GetApplianceList(app);
-            GridVapplist.DataSource = ds;
-            GridVapplist.DataBind();
+            //GridVapplist.DataSource = ds;
+            //GridVapplist.DataBind();
         }
 
 
