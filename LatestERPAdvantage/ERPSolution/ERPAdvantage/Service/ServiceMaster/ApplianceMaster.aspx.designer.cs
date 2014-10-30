@@ -58,13 +58,31 @@ namespace ERPAdvantage.Service.ServiceMaster {
         protected global::System.Web.UI.WebControls.SiteMapPath SiteMapPath1;
         
         /// <summary>
-        /// Appliancelist control.
+        /// txtappliancecode control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Panel Appliancelist;
+        protected global::System.Web.UI.WebControls.TextBox txtappliancecode;
+        
+        /// <summary>
+        /// cmdgetlist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cmdgetlist;
+        
+        /// <summary>
+        /// Applist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Applist;
         
         /// <summary>
         /// Popup control.
@@ -112,6 +130,15 @@ namespace ERPAdvantage.Service.ServiceMaster {
         protected global::System.Web.UI.WebControls.TextBox txtsearchbyappname;
         
         /// <summary>
+        /// cmdsearch control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cmdsearch;
+        
+        /// <summary>
         /// GridVapplist control.
         /// </summary>
         /// <remarks>
@@ -121,42 +148,6 @@ namespace ERPAdvantage.Service.ServiceMaster {
         protected global::System.Web.UI.WebControls.GridView GridVapplist;
         
         /// <summary>
-        /// cmdselectapp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdselectapp;
-        
-        /// <summary>
-        /// txtappliancecode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtappliancecode;
-        
-        /// <summary>
-        /// cmdgetlist control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button cmdgetlist;
-        
-        /// <summary>
-        /// rfvappcode control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator rfvappcode;
-        
-        /// <summary>
         /// txtappliancedesc control.
         /// </summary>
         /// <remarks>
@@ -164,15 +155,6 @@ namespace ERPAdvantage.Service.ServiceMaster {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox txtappliancedesc;
-        
-        /// <summary>
-        /// fvappdesc control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator fvappdesc;
         
         /// <summary>
         /// Label1 control.
@@ -247,12 +229,12 @@ namespace ERPAdvantage.Service.ServiceMaster {
         protected global::System.Web.UI.WebControls.Button cmdsave;
         
         /// <summary>
-        /// Button1 control.
+        /// cmdresetform control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button cmdresetform;
     }
 }

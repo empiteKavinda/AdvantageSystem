@@ -15,8 +15,8 @@ namespace ERPAdvantage.Service.ServiceMaster
 {
     public partial class ApplianceMaster : System.Web.UI.Page
     {
+     
         
-
 
         private void GetAppliancecategory()
         {
@@ -36,11 +36,11 @@ namespace ERPAdvantage.Service.ServiceMaster
             ADTWebService wser = new ADTWebService();
             Appliancemst app = new Appliancemst();
             app.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
-            app.pApplianceCode = txtappliancecode.Text.Trim();
-            app.pApplianceName = txtappliancedesc.Text.Trim();
+            app.pApplianceCode = txtsearchbyappcode.Text;
+            app.pApplianceName = txtsearchbyappname.Text;
             DataSet ds = wser.GetApplianceList(app);
-            //GridVapplist.DataSource = ds;
-            //GridVapplist.DataBind();
+            GridVapplist.DataSource = ds;
+            GridVapplist.DataBind();
         }
 
 
@@ -59,6 +59,8 @@ namespace ERPAdvantage.Service.ServiceMaster
                 txtestimationcost.Text = mydata[3].ToString();
                 ddlappcategory.SelectedValue = mydata[4].ToString();
             }
+            txtappliancecode.Enabled = false;
+            Session["formmode"] = ERPSystemData.Status.Update.ToString();
         }
 
         private bool CreateAppliance()
@@ -95,16 +97,26 @@ namespace ERPAdvantage.Service.ServiceMaster
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
             if (!IsPostBack)
             {
                 GetAppliancecategory();
-                GetAppliance();
+                GetAppliance();                
+                Session["formmode"] = ERPSystemData.Status.New.ToString();
             }
         }
 
         protected void cmdgetlist_Click(object sender, EventArgs e)
         {
-            GetAppliance();
+            if (Applist.Visible == false)
+            {
+                Applist.Visible = true;
+            }
+            else
+            {
+                Applist.Visible = false;
+            }
+            
         }
 
         protected void cmdselectapp_Click(object sender, EventArgs e)
@@ -122,26 +134,71 @@ namespace ERPAdvantage.Service.ServiceMaster
 
         protected void cmdsave_Click(object sender, EventArgs e)
         {
-            if (CreateAppliance() == true)
+            if (ddlappcategory.SelectedIndex == 0)
             {
-                lblstatus.Text = Resources.UIMessege.msgSaveOk;
+                lblstatus.Text = "Invalid Appliance category";
+                lblstatus.ForeColor = System.Drawing.Color.Red;
+                return;
+            }
+
+            if (Session["formmode"] == ERPSystemData.Status.New.ToString())
+          {
+
+                if (CreateAppliance() == true)
+                {
+                    lblstatus.Text = Resources.UIMessege.msgSaveOk;
+                }
+                else
+                {
+                    lblstatus.Text = Resources.UIMessege.msgSaveError;
+                }
+        }
+            else if (Session["formmode"] == ERPSystemData.Status.Update.ToString())
+        {
+            if(UpdateAppliance()== true)
+            {
+                lblstatus.Text = Resources.UIMessege.msgUpdateOk;
             }
             else
             {
-                lblstatus.Text = Resources.UIMessege.msgSaveError;
+                lblstatus.Text = Resources.UIMessege.msgupdateerror;
             }
+        }
+
         }
 
         protected void Button1_Click(object sender, EventArgs e)
         {
-            if (UpdateAppliance() == true)
-            {
-                lblstatus.Text = Resources.UIMessege.msgSaveOk;
-            }
-            else
-            {
-                lblstatus.Text = Resources.UIMessege.msgSaveError;
-            }
+            
+        }
+
+        protected void txtsearchbyappcode_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void cmdsearch_Click(object sender, EventArgs e)
+        {
+            GetAppliance();
+        }
+
+        protected void GridVapplist_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtappliancecode.Text = GridVapplist.SelectedRow.Cells[1].Text;            
+            GetApplianceDetails();
+            Applist.Visible = false;
+            Session["formmode"] = ERPSystemData.Status.Update.ToString();
+        }
+
+        protected void cmdresetform_Click(object sender, EventArgs e)
+        {
+            UIvalidations uic = new UIvalidations();
+            uic.ClearInputs(Page.Controls);
+            lblstatus.Text = string.Empty;
+            txtappliancecode.Enabled = true;
+            txtsearchbyappcode.Text = "%";
+            txtsearchbyappname.Text = "%";
+            Session["formmode"] = ERPSystemData.Status.New.ToString();
         }
 
         

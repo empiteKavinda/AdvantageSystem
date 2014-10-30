@@ -277,7 +277,7 @@ public class UIvalidations:Page
                 switch (Convert.ToString(userMlist[i].SUSR_MOD_ID))
                 {
                     case ServiceMain.ModuleId:
-                     if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
+                        if (objTs.pSUSR_OBJ_ID == objumst.pObjId)
                      success = true;
                      sTempModuleType = ERPSystemData.gModuleName.SERVICE.ToString();
                      break;

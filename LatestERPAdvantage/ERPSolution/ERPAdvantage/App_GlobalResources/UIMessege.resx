@@ -130,10 +130,10 @@
     <value>Successfully saved  the data.</value>
   </data>
   <data name="msgSelect" xml:space="preserve">
-    <value>Please select the values</value>
+    <value>Please select the values.</value>
   </data>
   <data name="msgUpdateOk" xml:space="preserve">
-    <value>Successfully updated.</value>
+    <value>Successfully updated Data.</value>
   </data>
   <data name="msgVName" xml:space="preserve">
     <value>Please insert a valid name.</value>
@@ -141,7 +141,7 @@
   <data name="msgVPhoneno" xml:space="preserve">
     <value>Please enter a valid Phone no</value>
   </data>
-  <data name="String1" xml:space="preserve">
-    <value />
+  <data name="msgupdateerror" xml:space="preserve">
+    <value>Unable to Update Data</value>
   </data>
 </root>
