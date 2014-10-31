@@ -228,8 +228,6 @@ public class UIvalidations:Page
         //If Not (Regex.IsMatch(textValue, "^[azAZ'.]{1,40}$")) Then
 
         if (!(Regex.IsMatch(textValue, "(\\(\\d{3}\\)|\\d{3}-)?\\d{8}")))
-         
-
         {
             // lblIsname.Text = "Please insert a valied " & obj
             //TextBox.Focus()
@@ -254,8 +252,7 @@ public class UIvalidations:Page
         }
         return str.ToString(); 
     }
-
-
+    
     public bool CheckModuleAccess(Advantage.ERP.DAL.DataContract.UserSpecificData objumst)
     {
         bool success = false;

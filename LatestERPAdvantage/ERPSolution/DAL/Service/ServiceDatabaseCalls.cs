@@ -352,5 +352,34 @@ namespace Advantage.ERP.DAL
         }
 
        #endregion ApplianceMaster
+
+       #region DomainMaster
+
+        public DataSet gMsGetDomainTypes(DAL.DataContract.Domainmst objdomain)
+        {
+            Database db = DatabaseFactory.CreateDatabase();
+            string sqlcommand = "GetDomainTypes";
+            DbCommand dbcommand = db.GetStoredProcCommand(sqlcommand);
+            db.AddInParameter(dbcommand, "@domaintype", DbType.String, objdomain.pDomType);
+            DataSet domdata = null;
+            domdata = db.ExecuteDataSet(dbcommand);
+            return domdata;
+            
+        }
+
+
+        public DataSet gMsGetDomainDetails(DAL.DataContract.Domainmst objdomain)
+        {
+            Database db = DatabaseFactory.CreateDatabase();
+            string sqlcommand = "GetDomainDetails";
+            DbCommand dbcommand = db.GetStoredProcCommand(sqlcommand);
+            db.AddInParameter(dbcommand, "@orgcode", DbType.String, objdomain.pOrgCode);
+            db.AddInParameter(dbcommand, "@DomType", DbType.String, objdomain.pDomType);
+            DataSet domdata =null;
+            domdata = db.ExecuteDataSet(dbcommand);
+            return domdata;
+        }
+
+       #endregion DomainMaster
    }
 }

@@ -30,7 +30,7 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
         cFlagSE = Convert.ToString(Session["cFlagSE"]);
         if (!IsPostBack)
         {
-                               
+                       
            UIvalidations uiv = new UIvalidations();
             uiv.ClearInputs(Page.Controls);
             getPrefix();
@@ -43,7 +43,6 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
             gvCustomerDetails.DataBind();
         }
        
-      
     }
 
     /// <summary>
@@ -58,14 +57,7 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
        objMst.pDomType = ERPSystemData.COM_DOM_TYPE.PREFIX.ToString();
        List<gDropdownlist> drplist = wsoj.pMsGetCategory(objMst);
        uicon.FillDropdownList(ddlPrefix, drplist, "COM_DOM_CODE", "COM_DOM_DESC");
-       
-       
-
-
-
-
-
-    }
+   }
   private void getCategory()
     {
        UIControl uicon = new UIControl();
@@ -91,7 +83,7 @@ public partial class MST_CustomerMaster : System.Web.UI.Page
 
   protected void btnSave_Click(object sender, EventArgs e)
      {
-       //  Page.Validate();
+        //  Page.Validate();
          UIvalidations uiv = new UIvalidations();
          UserSpecificData objumst = new UserSpecificData();
          objumst.pObjId = 4;

@@ -311,5 +311,23 @@ namespace Advantage.ERP.BLL
 
 
         #endregion
+
+        #region DomainMaster
+
+        public DataSet gMsGetDomainTypes(DAL.DataContract.Domainmst objdomain)
+        {
+            ServiceDatabaseCalls objd = new ServiceDatabaseCalls();
+            DataSet domainds=objd.gMsGetDomainTypes(objdomain);
+            return domainds;
+        }
+
+        public DataSet gMsGetDomainDetails(DAL.DataContract.Domainmst objdom)
+        {
+            ServiceDatabaseCalls obj = new ServiceDatabaseCalls();
+            DataSet objdomain = obj.gMsGetDomainDetails(objdom);
+            return objdomain;
+        }
+
+        #endregion DomainMaster
     }
 }
