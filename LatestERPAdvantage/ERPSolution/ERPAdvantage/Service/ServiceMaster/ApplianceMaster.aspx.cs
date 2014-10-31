@@ -141,7 +141,7 @@ namespace ERPAdvantage.Service.ServiceMaster
                 return;
             }
 
-            if (Session["formmode"] == ERPSystemData.Status.New.ToString())
+            if (Session["formmode"].ToString() == ERPSystemData.Status.New.ToString())
           {
 
                 if (CreateAppliance() == true)
@@ -153,7 +153,7 @@ namespace ERPAdvantage.Service.ServiceMaster
                     lblstatus.Text = Resources.UIMessege.msgSaveError;
                 }
         }
-            else if (Session["formmode"] == ERPSystemData.Status.Update.ToString())
+            else if (Session["formmode"].ToString() == ERPSystemData.Status.Update.ToString())
         {
             if(UpdateAppliance()== true)
             {
