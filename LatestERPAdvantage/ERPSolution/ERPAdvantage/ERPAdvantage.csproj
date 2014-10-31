@@ -87,11 +87,8 @@
     <Content Include="Service\ServiceMaster\ApplianceMaster.aspx" />
     <Content Include="Service\ServiceMaster\AreaMaster.aspx" />
     <Content Include="Service\ServiceMaster\CustomerMaster.aspx" />
-<<<<<<< HEAD
     <Content Include="Service\ServiceMaster\DomainMaster.aspx" />
-=======
     <Content Include="Service\ServiceTransaction\Quotation.aspx" />
->>>>>>> 1ea993125c4489d21d85f08940d8c0f7eea27c85
     <Content Include="Styles\generic.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -218,21 +215,19 @@
       <DependentUpon>CustomerMaster.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <Compile Include="Service\ServiceMaster\DomainMaster.aspx.cs">
       <DependentUpon>DomainMaster.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Service\ServiceMaster\DomainMaster.aspx.designer.cs">
       <DependentUpon>DomainMaster.aspx</DependentUpon>
-=======
+    </Compile>
     <Compile Include="Service\ServiceTransaction\Quotation.aspx.cs">
       <DependentUpon>Quotation.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Service\ServiceTransaction\Quotation.aspx.designer.cs">
       <DependentUpon>Quotation.aspx</DependentUpon>
->>>>>>> 1ea993125c4489d21d85f08940d8c0f7eea27c85
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
