@@ -1,9 +1,8 @@
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\Libraries\bin\Debug\Libraries.dll
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\Libraries\bin\Debug\Libraries.pdb
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\Libraries\obj\Debug\Libraries.dll
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\Libraries\obj\Debug\Libraries.pdb
-E:\Project\ERP\LatestERPAdvantage\ERPSolution\Libraries\obj\Debug\Libraries.csprojResolveAssemblyReference.cache
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\Libraries\bin\Debug\Libraries.dll
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\Libraries\bin\Debug\Libraries.pdb
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\Libraries\obj\Debug\Libraries.dll
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\Libraries\obj\Debug\Libraries.pdb
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\Libraries\bin\Debug\Libraries.dll
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\Libraries\bin\Debug\Libraries.pdb
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\Libraries\obj\Debug\Libraries.dll
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\Libraries\obj\Debug\Libraries.pdb
