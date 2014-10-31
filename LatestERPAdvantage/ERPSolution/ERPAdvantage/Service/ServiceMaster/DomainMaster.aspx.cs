@@ -34,7 +34,17 @@ namespace ERPAdvantage.Service.ServiceMaster
             objdomain.pDomType = txtdomaintype.Text;
             DataSet ds = ws.gMsGetDomainDetails(objdomain);
             gvaddeddomain.DataSource = ds;
+            //ViewState["AddedDomain"] = ds;
             gvaddeddomain.DataBind();
+            
+
+        }
+
+        private void ClearInputs()
+        {
+            txtdomcode.Text = string.Empty;
+            txtdomaindesc.Text = string.Empty;
+            txtdomprefix.Text = string.Empty;
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -70,7 +80,52 @@ namespace ERPAdvantage.Service.ServiceMaster
 
         protected void btnadd_Click(object sender, EventArgs e)
         {
-            GetDomainDetails();
+            tempdom.Visible = true;
+            if (ViewState["AddedDomain"] != null)
+            {
+                DataTable dtt = (DataTable)(ViewState["AddedDomain"]);
+                DataRow drr = dtt.NewRow();
+                drr["domcode"] = txtdomcode.Text;
+                drr["domdesc"] = txtdomaindesc.Text;
+                drr["domprefix"] = txtdomprefix.Text;
+                dtt.Rows.Add(drr);
+                gvtemp.DataSource = dtt;
+                gvtemp.DataBind();
+                ViewState["AddedDomain"] = dtt;
+                ClearInputs();
+            }
+            else
+            {
+
+                DataTable dt1 = new DataTable();
+                dt1.Columns.Add(new DataColumn("domcode", Type.GetType("System.String")));
+                dt1.Columns.Add(new DataColumn("domdesc", Type.GetType("System.String")));
+                dt1.Columns.Add(new DataColumn("domprefix", Type.GetType("System.String")));
+
+                DataRow dr = dt1.NewRow();
+                dr["domcode"] = txtdomcode.Text;
+                dr["domdesc"] = txtdomaindesc.Text;
+                dr["domprefix"] = txtdomprefix.Text;
+
+                dt1.Rows.Add(dr);
+                gvtemp.DataSource = dt1;
+                gvtemp.DataBind();
+                ViewState["AddedDomain"] = dt1;
+                ClearInputs();
+            }
         }
-    }
+
+        protected void gvaddeddomain_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+
+        }
+
+        
+     
+     
+            
+        }
+
+
+    
 }

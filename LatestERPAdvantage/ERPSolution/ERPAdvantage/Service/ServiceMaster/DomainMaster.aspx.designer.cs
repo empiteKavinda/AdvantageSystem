@@ -130,22 +130,22 @@ namespace ERPAdvantage.Service.ServiceMaster {
         protected global::System.Web.UI.WebControls.TextBox txtdomcode;
         
         /// <summary>
-        /// TextBox1 control.
+        /// txtdomaindesc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox txtdomaindesc;
         
         /// <summary>
-        /// TextBox2 control.
+        /// txtdomprefix control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox txtdomprefix;
         
         /// <summary>
         /// btnadd control.
@@ -155,6 +155,24 @@ namespace ERPAdvantage.Service.ServiceMaster {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnadd;
+        
+        /// <summary>
+        /// tempdom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel tempdom;
+        
+        /// <summary>
+        /// gvtemp control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView gvtemp;
         
         /// <summary>
         /// addeddom control.
