@@ -328,6 +328,12 @@ namespace Advantage.ERP.BLL
             return objdomain;
         }
 
+        public void gMsCreateDomain(DAL.DataContract.Domainmst objdom)
+        {
+            ServiceDatabaseCalls objser = new ServiceDatabaseCalls();
+            objser.gMsCreateDomain(objdom);
+        }
+
         #endregion DomainMaster
     }
 }

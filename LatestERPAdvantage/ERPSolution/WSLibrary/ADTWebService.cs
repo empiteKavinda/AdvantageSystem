@@ -176,7 +176,12 @@ public List<gDropdownlist> pMsGetAppliancecategory(Advantage.ERP.DAL.DataContrac
         ServiceBusinessCalls obj = new ServiceBusinessCalls();
         return obj.gMsGetDomainDetails(objdomain);
     }
-
+    [WebMethod]
+    public void gMsCreateDomain(Advantage.ERP.DAL.DataContract.Domainmst objdom)
+    {
+        ServiceBusinessCalls obj = new ServiceBusinessCalls();
+        obj.gMsCreateDomain(objdom);
+    }
 
     #endregion DomainMaster
 

@@ -40,6 +40,25 @@ namespace ERPAdvantage.Service.ServiceMaster
 
         }
 
+        private bool CreateDomain()
+        {
+            foreach (GridViewRow gr in gvtemp.Rows)
+            {
+                UIControl uic = new UIControl();
+                ADTWebService ws = new ADTWebService();
+                Domainmst objdom = new Domainmst();
+                objdom.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
+                objdom.pDomCode = gr.Cells[1].Text;
+                objdom.pDomType = txtdomaintype.Text;
+                objdom.pDomName = gr.Cells[2].Text;
+                objdom.pDomPrefix = gr.Cells[3].Text;
+                ws.gMsCreateDomain(objdom);
+                
+            }
+            return true;
+            
+        }
+
         private void ClearInputs()
         {
             txtdomcode.Text = string.Empty;
@@ -72,10 +91,11 @@ namespace ERPAdvantage.Service.ServiceMaster
 
         protected void GridVdomlist_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtsearchbydomname.Text = GridVdomlist.SelectedRow.Cells[1].Text;
+            //txtsearchbydomname.Text = GridVdomlist.SelectedRow.Cells[1].Text;
             txtdomaintype.Text = GridVdomlist.SelectedRow.Cells[1].Text;
             Domainlist.Visible = false;
             GetDomainDetails();
+            txtdomaintype.Enabled = false;
         }
 
         protected void btnadd_Click(object sender, EventArgs e)
@@ -118,6 +138,17 @@ namespace ERPAdvantage.Service.ServiceMaster
         protected void gvaddeddomain_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
 
+        }
+
+        protected void cmdsave_Click(object sender, EventArgs e)
+        {
+            if (CreateDomain() == true)
+            {
+                lblstatus.Text = Resources.UIMessege.msgSaveOk;
+                gvtemp.DataSource = null;
+                gvtemp.DataBind();
+                GetDomainDetails();
+            }
         }
 
         
