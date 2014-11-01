@@ -20,7 +20,8 @@ public class ERPSystemData
         CUSTOMER_CATEGORY,
         AREA,
         PREFIX,
-        APPLIANCE_CATEGORY
+        APPLIANCE_CATEGORY,
+        QUOTATION_CATEGORY
     }
 
     public enum COM_DOM_ORG_CODE
