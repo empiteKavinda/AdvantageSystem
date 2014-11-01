@@ -13,6 +13,15 @@ namespace ERPAdvantage.Service.ServiceMaster {
     public partial class DomainMaster {
         
         /// <summary>
+        /// lblstatus control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblstatus;
+        
+        /// <summary>
         /// lbldomtype control.
         /// </summary>
         /// <remarks>
@@ -191,5 +200,23 @@ namespace ERPAdvantage.Service.ServiceMaster {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView gvaddeddomain;
+        
+        /// <summary>
+        /// cmdsave control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cmdsave;
+        
+        /// <summary>
+        /// cmdreset control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button cmdreset;
     }
 }

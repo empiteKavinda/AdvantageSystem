@@ -25,5 +25,6 @@ namespace Advantage.ERP.DAL
         bool gMsUpdateAppliance(DAL.DataContract.Appliancemst objapp);
         DataSet gMsGetDomainTypes(DAL.DataContract.Domainmst objdomain);
         DataSet gMsGetDomainDetails(DAL.DataContract.Domainmst objdomain);
+        bool gMsCreateDomain(DAL.DataContract.Domainmst objdom);
     }
 }

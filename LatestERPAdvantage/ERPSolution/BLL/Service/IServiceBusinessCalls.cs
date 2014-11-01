@@ -25,5 +25,6 @@ namespace Advantage.ERP.BLL
         void gMsUpdateAppliance(DAL.DataContract.Appliancemst objapp);
         DataSet gMsGetDomainTypes(DAL.DataContract.Domainmst objdomain);
         DataSet gMsGetDomainDetails(DAL.DataContract.Domainmst objdomain);
+        void  gMsCreateDomain(DAL.DataContract.Domainmst objdomain);
     }
 }
