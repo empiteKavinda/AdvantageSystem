@@ -334,6 +334,28 @@ namespace Advantage.ERP.BLL
             objser.gMsCreateDomain(objdom);
         }
 
+        public DataSet gMsSearchDomain(DAL.DataContract.Domainmst objdom)
+        {
+        ServiceDatabaseCalls obj=new ServiceDatabaseCalls();
+        DataSet dsdom= obj.gMsSearchDomain(objdom);
+        return dsdom;
+        }
+
+        public bool gMsDeleteDomain(DAL.DataContract.Domainmst objdom)
+        {
+            ServiceDatabaseCalls objs = new ServiceDatabaseCalls();
+            objs.gMsDeleteDomain(objdom);
+            return true;
+
+        }
+
+        public int gMsAddDomainType(DAL.DataContract.Domainmst objdom)
+        {
+            ServiceDatabaseCalls obj = new ServiceDatabaseCalls();
+            return obj.gMsAddDomainType(objdom);
+            
+        }
+
         #endregion DomainMaster
     }
 }

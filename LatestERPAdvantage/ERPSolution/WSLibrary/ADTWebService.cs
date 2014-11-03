@@ -181,6 +181,27 @@ public List<gDropdownlist> pMsGetAppliancecategory(Advantage.ERP.DAL.DataContrac
         ServiceBusinessCalls obj = new ServiceBusinessCalls();
         obj.gMsCreateDomain(objdom);
     }
+    [WebMethod]
+    public DataSet gMsSearchDomain(Advantage.ERP.DAL.DataContract.Domainmst objdom)
+    {
+        ServiceBusinessCalls objs = new ServiceBusinessCalls();
+        return objs.gMsSearchDomain(objdom);                    
+
+    }
+    [WebMethod]
+    public bool gMsDeleteDomain(Advantage.ERP.DAL.DataContract.Domainmst objdom)
+    {
+        ServiceBusinessCalls objs = new ServiceBusinessCalls();
+        objs.gMsDeleteDomain(objdom);
+        return true;
+    }
+    [WebMethod]
+    public bool gMsAddDomainType(Advantage.ERP.DAL.DataContract.Domainmst objdom)
+    {
+        ServiceBusinessCalls obj = new ServiceBusinessCalls();
+        obj.gMsAddDomainType(objdom);
+        return true;
+    }
 
     #endregion DomainMaster
 

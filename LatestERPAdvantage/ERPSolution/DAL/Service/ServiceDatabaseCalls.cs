@@ -380,6 +380,20 @@ namespace Advantage.ERP.DAL
             return domdata;
         }
 
+        public DataSet gMsSearchDomain(DAL.DataContract.Domainmst objdom)
+        {
+            Database db = DatabaseFactory.CreateDatabase();
+            string sqlcmd = "SearchDomain";
+            DbCommand dbcommand = db.GetStoredProcCommand(sqlcmd);
+            db.AddInParameter(dbcommand, "@OrgCode", DbType.String, objdom.pOrgCode);
+            db.AddInParameter(dbcommand, "@DomType", DbType.String, objdom.pDomType);
+            db.AddInParameter(dbcommand, "@DomCode", DbType.String, objdom.pDomCode);
+            db.AddInParameter(dbcommand, "@DomName", DbType.String, objdom.pDomName);
+            DataSet ds = null;
+            ds = db.ExecuteDataSet(dbcommand);
+            return ds;
+        }
+
         public bool gMsCreateDomain(DAL.DataContract.Domainmst objdom)
         {
             DAL.DataContract.UserSpecificData usrdata = new DataContract.UserSpecificData();
@@ -404,6 +418,40 @@ namespace Advantage.ERP.DAL
                 return false;
             }
         }
+
+        public bool gMsDeleteDomain(DAL.DataContract.Domainmst objdom)
+        {
+            Database db = DatabaseFactory.CreateDatabase();
+            string sqlcommand = "DeleteDomain";
+            DbCommand dbcommand = db.GetStoredProcCommand(sqlcommand);
+            db.AddInParameter(dbcommand, "@OrgCode", DbType.String, objdom.pOrgCode);
+            db.AddInParameter(dbcommand, "@DomType", DbType.String, objdom.pDomType);
+            db.AddInParameter(dbcommand, "@DomCode", DbType.String, objdom.pDomCode);
+            int x=0;
+            x = db.ExecuteNonQuery(dbcommand);
+            if(x>0)
+            {
+            
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+                            
+        }
+
+        public int gMsAddDomainType(DAL.DataContract.Domainmst objdom)
+        {
+            Database db = DatabaseFactory.CreateDatabase();
+            string sqlcommand = "AddDomainType";
+            DbCommand dbcommand = db.GetStoredProcCommand(sqlcommand);
+            db.AddInParameter(dbcommand, "@DomType", DbType.String, objdom.pDomType);
+            db.AddOutParameter(dbcommand, "@Rowcnt", DbType.Int16, 2);
+            return db.ExecuteNonQuery(dbcommand);
+
+        }
+
        #endregion DomainMaster
    }
 }

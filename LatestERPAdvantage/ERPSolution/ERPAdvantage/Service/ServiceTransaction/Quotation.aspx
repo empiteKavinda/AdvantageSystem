@@ -179,7 +179,7 @@
                         <asp:Label ID="lblTodate" runat="server" Text="To Date"></asp:Label>
                     </td>
                     <td>
-                     <asp:CalendarExtender ID="calToDate" CssClass="textbox" runat="Server" BehaviorID="calToDate" OnClientShowing="showDate"  TargetControlID ="txtToDate"  /> 
+                     <asp:CalendarExtender ID="calToDate" CssClass="textbox" runat="Server" BehaviorID="calToDate"  TargetControlID ="txtToDate"  /> 
                      <asp:TextBox ID="txtToDate" runat="server" ></asp:TextBox>
                   
                     </td>

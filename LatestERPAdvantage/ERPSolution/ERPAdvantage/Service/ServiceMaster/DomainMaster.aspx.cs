@@ -25,6 +25,14 @@ namespace ERPAdvantage.Service.ServiceMaster
             GridVdomlist.DataBind();
         }
 
+        private void ClearFormdata()
+        {
+            UIvalidations uic = new UIvalidations();
+            uic.ClearInputs(this.Controls);                        
+            addeddom.Visible = false;
+            txtdomaintype.Enabled = true;
+        }
+
         private void GetDomainDetails()
         {
             UIControl uic = new UIControl();
@@ -33,11 +41,33 @@ namespace ERPAdvantage.Service.ServiceMaster
             objdomain.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString(); ;
             objdomain.pDomType = txtdomaintype.Text;
             DataSet ds = ws.gMsGetDomainDetails(objdomain);
-            gvaddeddomain.DataSource = ds;
-            //ViewState["AddedDomain"] = ds;
+            if (ds !=null)
+            {
+                addeddom.Visible = true;
+            }
+            else
+            {
+                addeddom.Visible = false;
+            }
+            gvaddeddomain.DataSource = ds;            
             gvaddeddomain.DataBind();
             
 
+        }
+
+        private void SearchDomain()
+        {
+            UIControl uic = new UIControl();
+            ADTWebService ws = new ADTWebService();
+            Domainmst objdom = new Domainmst();
+            objdom.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
+            objdom.pDomType = txtdomaintype.Text;
+            objdom.pDomCode = txtsearchcode.Text;
+            objdom.pDomName = txtsearchname.Text;
+            DataSet ds = null;
+            ds=(DataSet) ws.gMsSearchDomain(objdom);
+            gvaddeddomain.DataSource = ds;
+            gvaddeddomain.DataBind();
         }
 
         private bool CreateDomain()
@@ -57,6 +87,19 @@ namespace ERPAdvantage.Service.ServiceMaster
             }
             return true;
             
+        }
+
+        private bool DeleteDomain(string domtype,string domcode)
+        {
+            UIControl uic = new UIControl();
+            ADTWebService ws = new ADTWebService();
+            Domainmst objdom=new Domainmst();
+            ServiceBusinessCalls obj = new ServiceBusinessCalls();
+            objdom.pOrgCode = ERPSystemData.COM_DOM_ORG_CODE.AEL.ToString();
+            objdom.pDomType = domtype;
+            objdom.pDomCode = domcode;
+            obj.gMsDeleteDomain(objdom);
+            return true;
         }
 
         private void ClearInputs()
@@ -137,7 +180,10 @@ namespace ERPAdvantage.Service.ServiceMaster
 
         protected void gvaddeddomain_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-
+            
+            DeleteDomain(gvaddeddomain.Rows[e.RowIndex].Cells[2].Text, gvaddeddomain.Rows[e.RowIndex].Cells[3].Text.Replace("&nbsp;", ""));
+            GetDomainDetails();
+            lblstatus.Text = Resources.UIMessege.msgDeleteOk;
         }
 
         protected void cmdsave_Click(object sender, EventArgs e)
@@ -150,6 +196,41 @@ namespace ERPAdvantage.Service.ServiceMaster
                 GetDomainDetails();
             }
         }
+
+        protected void cmdsearchdomain_Click(object sender, EventArgs e)
+        {
+            SearchDomain();
+        }
+
+        protected void btnaddnewdomaintype_Click(object sender, EventArgs e)
+        {
+            UIControl uic = new UIControl();
+            ADTWebService ws = new ADTWebService();
+            Domainmst objdom = new Domainmst();
+            ServiceBusinessCalls obj = new ServiceBusinessCalls();
+            objdom.pDomType = txtdomaintype.Text;
+            if (obj.gMsAddDomainType(objdom) > 0) 
+            {
+                lblstatus.Text = Resources.UIMessege.msgSaveOk;
+            }
+            else
+            {
+                lblstatus.Text = Resources.UIMessege.msgDuplicateEntry;
+            }
+
+        }
+
+        protected void cmdreset_Click(object sender, EventArgs e)
+        {
+            ClearFormdata();
+        }
+
+        protected void gvtemp_RowDeleting(object sender, GridViewDeleteEventArgs e)
+        {
+            gvtemp.DeleteRow(gvtemp.SelectedIndex);
+        }
+
+      
 
         
      

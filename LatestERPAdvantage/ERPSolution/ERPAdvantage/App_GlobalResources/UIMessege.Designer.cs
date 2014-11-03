@@ -70,6 +70,24 @@ namespace Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Successfully Deleted Data..
+        /// </summary>
+        internal static string msgDeleteOk {
+            get {
+                return ResourceManager.GetString("msgDeleteOk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Duplicate Data ,Data Already Exist..
+        /// </summary>
+        internal static string msgDuplicateEntry {
+            get {
+                return ResourceManager.GetString("msgDuplicateEntry", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Please insert a valid Email address..
         /// </summary>
         internal static string msgIsValiedEmail {
@@ -106,7 +124,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Unable to Update Data.
+        ///   Looks up a localized string similar to Unable to Update Data..
         /// </summary>
         internal static string msgupdateerror {
             get {
@@ -133,7 +151,7 @@ namespace Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Please enter a valid Phone no.
+        ///   Looks up a localized string similar to Please enter a valid Phone no..
         /// </summary>
         internal static string msgVPhoneno {
             get {
