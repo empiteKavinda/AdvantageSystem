@@ -383,7 +383,7 @@ namespace Advantage.ERP.DAL
         public bool gMsCreateDomain(DAL.DataContract.Domainmst objdom)
         {
             DAL.DataContract.UserSpecificData usrdata = new DataContract.UserSpecificData();
-            
+            int y = 0;
             Database db = DatabaseFactory.CreateDatabase();
             string sqlcom = "AddDomian";
             DbCommand dbcommand = db.GetStoredProcCommand(sqlcom);
@@ -394,7 +394,7 @@ namespace Advantage.ERP.DAL
             db.AddInParameter(dbcommand, "@DomPrefix", DbType.String, objdom.pDomPrefix);
             db.AddInParameter(dbcommand, "@DomCreatedon", DbType.DateTime, DateTime.Now);
             db.AddInParameter(dbcommand, "@DomCreatedBy", DbType.String, usrdata.pUserId);
-            int y = db.ExecuteNonQuery(dbcommand);
+            y = db.ExecuteNonQuery(dbcommand);
             if (y > 0)
             {
                 return true;
@@ -404,8 +404,6 @@ namespace Advantage.ERP.DAL
                 return false;
             }
         }
-
-
        #endregion DomainMaster
    }
 }
