@@ -104,7 +104,7 @@
        }
     </style>
 
-   <script type="text/javascript" language="javascript">
+   <%--<script type="text/javascript" language="javascript">
       
 
        function showDate(sender,args)
@@ -115,7 +115,7 @@
                sender._selectedDate = todayDate;
            }
        }
-       </script>
+       </script>--%>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
       <asp:UpdatePanel ID="UpdatePanel1" runat="server">

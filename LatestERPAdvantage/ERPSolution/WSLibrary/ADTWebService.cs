@@ -88,7 +88,6 @@ public DataSet gMsGetCustomerList(Advantage.ERP.DAL.DataContract.CustomMaster ob
 [WebMethod]
 public bool gMsGetUserPermissioncheck(Advantage.ERP.DAL.DataContract.UserSpecificData objuMst)
 {
-   
     Advantage.ERP.BLL.ServiceBusinessCalls bsOj = new Advantage.ERP.BLL.ServiceBusinessCalls();
     return bsOj.gMsGetUserPermissioncheck(objuMst);
 }

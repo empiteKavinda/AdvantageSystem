@@ -47,3 +47,4 @@ E:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\obj\Debug\Advantage.ERP.DAL.pd
 =======
 G:\AEL\Projectasp.net\AdvantageSystem\LatestERPAdvantage\ERPSolution\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 >>>>>>> 41026b24dc892badda013a667d8d1c65b44eb5d5
+E:\Project\ERP\LatestERPAdvantage\ERPSolution\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
