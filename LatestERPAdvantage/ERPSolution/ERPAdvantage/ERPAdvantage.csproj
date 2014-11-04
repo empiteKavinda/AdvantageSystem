@@ -89,6 +89,7 @@
     <Content Include="Service\ServiceMaster\CustomerMaster.aspx" />
     <Content Include="Service\ServiceMaster\DomainMaster.aspx" />
     <Content Include="Service\ServiceTransaction\Quotation.aspx" />
+    <Content Include="Service\ServiceTransaction\VisitingRequest.aspx" />
     <Content Include="Styles\generic.css" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
@@ -228,6 +229,13 @@
     </Compile>
     <Compile Include="Service\ServiceTransaction\Quotation.aspx.designer.cs">
       <DependentUpon>Quotation.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Service\ServiceTransaction\VisitingRequest.aspx.cs">
+      <DependentUpon>VisitingRequest.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Service\ServiceTransaction\VisitingRequest.aspx.designer.cs">
+      <DependentUpon>VisitingRequest.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>

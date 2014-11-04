@@ -209,13 +209,17 @@ namespace ERPAdvantage.Service.ServiceMaster
             Domainmst objdom = new Domainmst();
             ServiceBusinessCalls obj = new ServiceBusinessCalls();
             objdom.pDomType = txtdomaintype.Text;
+
             if (obj.gMsAddDomainType(objdom) > 0) 
             {
                 lblstatus.Text = Resources.UIMessege.msgSaveOk;
+                lblstatus.ForeColor = System.Drawing.Color.Green;
             }
             else
             {
                 lblstatus.Text = Resources.UIMessege.msgDuplicateEntry;
+                lblstatus.ForeColor = System.Drawing.Color.Red;
+                txtdomaintype.Text = string.Empty;
             }
 
         }
@@ -227,7 +231,7 @@ namespace ERPAdvantage.Service.ServiceMaster
 
         protected void gvtemp_RowDeleting(object sender, GridViewDeleteEventArgs e)
         {
-            gvtemp.DeleteRow(gvtemp.SelectedIndex);
+            
         }
 
       

@@ -13,14 +13,6 @@
         {
             width: 137px;
         }
-        .auto-style5
-        {
-            width: 444px;
-        }
-        .auto-style6
-        {
-            width: 74px;
-        }
         .auto-style7
         {
             width: 80px;
@@ -39,9 +31,43 @@
         {
             height: 30px;
         }
+        .auto-style11
+        {
+            width: 407px;
+        }
+        .auto-style13
+        {
+            width: 88px;
+        }
+        .auto-style14
+        {
+            width: 137px;
+            height: 38px;
+        }
+        .auto-style15
+        {
+            width: 407px;
+            height: 38px;
+        }
+        .auto-style16
+        {
+            width: 88px;
+            height: 38px;
+        }
+        .auto-style17
+        {
+            height: 38px;
+        }
     </style>
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
+
+    <asp:SiteMapPath ID="SiteMapPath1" runat="server" Font-Names="Verdana" Font-Size="0.9em" PathSeparator=" : ">
+        <CurrentNodeStyle ForeColor="#333333" />
+        <NodeStyle Font-Bold="True" ForeColor="#990000" />
+        <PathSeparatorStyle Font-Bold="True" ForeColor="#990000" />
+        <RootNodeStyle Font-Bold="True" ForeColor="#FF8000" />
+    </asp:SiteMapPath>
 
 
     <asp:UpdatePanel runat ="server">
@@ -100,27 +126,27 @@
              <br />
     <table class="auto-style1">
         <tr>
-            <td class="auto-style4">
+            <td class="auto-style14">
                 <asp:Label ID="Label9" runat="server" Text="Label"></asp:Label>
                 <br />
                 <asp:Label ID="Label6" runat="server" Text="Domain Code"></asp:Label>
             </td>
-            <td class="auto-style5">
+            <td class="auto-style15">
                 <asp:Label ID="Label7" runat="server" Text="Domain Description"></asp:Label>
             </td>
-            <td class="auto-style6">
+            <td class="auto-style16">
                 <asp:Label ID="Label8" runat="server" Text="Prefix"></asp:Label>
             </td>
-            <td>&nbsp;</td>
+            <td class="auto-style17"></td>
         </tr>
         <tr>
             <td class="auto-style4">
                 <asp:TextBox ID="txtdomcode" runat="server" Height="18px"></asp:TextBox>
             </td>
-            <td class="auto-style5">
-                <asp:TextBox ID="txtdomaindesc" runat="server" Height="18px" Width="420px"></asp:TextBox>
+            <td class="auto-style11">
+                <asp:TextBox ID="txtdomaindesc" runat="server" Height="18px" Width="400px"></asp:TextBox>
             </td>
-            <td class="auto-style6">
+            <td class="auto-style13">
                 <asp:TextBox ID="txtdomprefix" runat="server" Height="18px" Width="74px"></asp:TextBox>
             </td>
             <td>
