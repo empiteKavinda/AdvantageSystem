@@ -177,6 +177,14 @@ namespace Advantage.ERP.BLL
             return ds;
         }
 
+        public DataSet gMsGetCustomerDetailList(DAL.DataContract.CustomMaster objcus)
+        {
+            ServiceDatabaseCalls obj = new ServiceDatabaseCalls();
+            DataSet ds= obj.gMsGetCustomerDetailList(objcus);
+            return ds;
+        }
+
+
         #endregion
 
         #region User  definitions
@@ -357,5 +365,46 @@ namespace Advantage.ERP.BLL
         }
 
         #endregion DomainMaster
+
+        
+        #region VisitingRequest
+
+        public List<gDropdownlist> gMsGetCategoryforVisitingReq(DAL.DataContract.VisitingReq objvr)
+        {
+
+            ServiceDatabaseCalls obj = new ServiceDatabaseCalls();          
+
+            List<gDropdownlist> droplist = new List<gDropdownlist>();
+            SqlDataReader sdr = obj.gMsGetCategoryforVisitingReq(objvr);
+            while (sdr.Read())
+            {
+                gDropdownlist drl = new gDropdownlist(sdr.GetString(0), sdr.GetString(1));
+                droplist.Add(drl);
+            }
+            return droplist;
+            
+        }
+
+
+
+        public List<gDropdownlist> gMsGetPriorityforVisitingReq(DAL.DataContract.VisitingReq objvr)
+        {
+
+            ServiceDatabaseCalls obj = new ServiceDatabaseCalls();          
+
+            List<gDropdownlist> droplist = new List<gDropdownlist>();
+            SqlDataReader sdr = obj.gMsGetPriorityforVisitingReq(objvr);
+            while (sdr.Read())
+            {
+                gDropdownlist drl = new gDropdownlist(sdr.GetString(0), sdr.GetString(1));
+                droplist.Add(drl);
+            }
+            return droplist;
+            
+        }
+        
+
+
+        #endregion VisitingRequest
     }
 }

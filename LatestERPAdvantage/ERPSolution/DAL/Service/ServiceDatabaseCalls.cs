@@ -162,8 +162,7 @@ namespace Advantage.ERP.DAL
 
        public DataSet gMsGetCustomerList(DAL.DataContract.CustomMaster objMst)
        {
-           //SqlDataAdapter da = null;
-          // DataSet ds = null;
+           
 
            // Create the Database object, using the default database service. The
            // default database service is determined through configuration.
@@ -184,6 +183,23 @@ namespace Advantage.ERP.DAL
            da.Fill(ds, 0, 20, "table");
           // da.Fill(ds);
            return ds;
+       }
+
+       public DataSet gMsGetCustomerDetailList(DAL.DataContract.CustomMaster objcus)
+       {
+           Database db = DatabaseFactory.CreateDatabase();
+           string sqlcommand = "GetCustomerDetails";
+           DbCommand dbcommand = db.GetStoredProcCommand(sqlcommand);
+           db.AddInParameter(dbcommand, "@OrgCode", DbType.String, objcus.pOrgCode);
+           db.AddInParameter(dbcommand, "@CustomerName", DbType.String, objcus.pCustName);
+           db.AddInParameter(dbcommand, "@TelephoneNo", DbType.String, objcus.pCustPhone1);
+           db.AddInParameter(dbcommand, "@AreaName", DbType.String, objcus.pCustArea);
+           db.AddInParameter(dbcommand, "@InvoiceAddress", DbType.String, objcus.pCustAdd);
+           DataSet ds = null;
+           ds = db.ExecuteDataSet(dbcommand);           
+           return ds;
+           
+
        }
       
 #endregion
@@ -453,5 +469,38 @@ namespace Advantage.ERP.DAL
         }
 
        #endregion DomainMaster
+
+       #region VisitingRequest
+
+        public SqlDataReader gMsGetCategoryforVisitingReq(DAL.DataContract.VisitingReq objvr)
+        {
+            DAL.DataContract.Domainmst objdom=new DataContract.Domainmst();
+            Database db = DatabaseFactory.CreateDatabase();
+            string sqlcommand = "gMsGetDomainType";
+            DbCommand dbcommand = db.GetStoredProcCommand(sqlcommand);
+            db.AddInParameter(dbcommand, "@pOrgCode", DbType.String, objvr.pOrgcode);
+            db.AddInParameter(dbcommand, "@pDomType", DbType.String, objvr.pJobCategory);
+            IDataReader idr = db.ExecuteReader(dbcommand);
+            return (SqlDataReader)((RefCountingDataReader)idr).InnerReader;
+            
+
+        }
+
+        public SqlDataReader gMsGetPriorityforVisitingReq(DAL.DataContract.VisitingReq objvr)
+        {
+            DAL.DataContract.Domainmst objdom = new DataContract.Domainmst();
+            Database db = DatabaseFactory.CreateDatabase();
+            string sqlcommand = "gMsGetDomainType";
+            DbCommand dbcommand = db.GetStoredProcCommand(sqlcommand);
+            db.AddInParameter(dbcommand, "@pOrgCode", DbType.String, objvr.pOrgcode);
+            db.AddInParameter(dbcommand, "@pDomType", DbType.String, objvr.pJobPriority);
+            IDataReader idr = db.ExecuteReader(dbcommand);
+            return (SqlDataReader)((RefCountingDataReader)idr).InnerReader;
+
+
+        }
+
+
+       #endregion VisitingRequest
    }
 }

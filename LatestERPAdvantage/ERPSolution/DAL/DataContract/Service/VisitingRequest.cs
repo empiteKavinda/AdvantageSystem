@@ -3,9 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace Advantage.ERP.DAL.DataContract.Service
+ namespace Advantage.ERP.DAL.DataContract
+     
 {
-    public class VisitingRequest
+    public class VisitingReq
     {
         public string pOrgcode {get; set;}
         public string pBrncode {get; set;}
@@ -52,6 +53,7 @@ namespace Advantage.ERP.DAL.DataContract.Service
         public string pItemCapacity { get; set; }
         public string pItemLocation { get; set; }
         public int pQty { get; set; }
-        
+        public string pJobCategory { get; set; }
+        public string pJobPriority { get; set; }
     }
 }

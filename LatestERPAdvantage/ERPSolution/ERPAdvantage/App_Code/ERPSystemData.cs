@@ -21,7 +21,9 @@ public class ERPSystemData
         AREA,
         PREFIX,
         APPLIANCE_CATEGORY,
-        QUOTATION_CATEGORY
+        QUOTATION_CATEGORY,
+        JOB_CATEGORY,
+        PRIORITY
     }
 
     public enum COM_DOM_ORG_CODE
